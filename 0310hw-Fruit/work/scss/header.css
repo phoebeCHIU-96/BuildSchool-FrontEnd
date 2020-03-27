@@ -1,0 +1,775 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wrap {
+  width: 100%;
+}
+
+.wrap .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 27px 144px 27px 144px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.wrap .header .myAccountBlock a {
+  color: #000;
+  text-decoration: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+  font-size: 14px;
+}
+
+.wrap .header .myAccountBlock a:hover {
+  color: #ffe605;
+}
+
+.wrap .header .myAccountBlock .iconBlock a {
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.wrap .header .myAccountBlock .iconBlock a:hover {
+  color: #ffe605;
+}
+
+.wrap .header .myAccountBlock .iconBlock .fa-shopping-cart::before {
+  content: '\f07a';
+}
+
+.wrap .header .myAccountBlock .iconBlock #cart_items {
+  display: inline-block;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: #ffe605;
+}
+
+.wrap .navBlock {
+  background-color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
+  top: 0px;
+  padding: 62.5px 135px 62.5px 135px;
+  font-weight: lighter;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrap .navBlock .logoBlock .logo {
+  width: 100%;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/logo_240x70_crop_center@2x.png?v=1580287569);
+}
+
+.wrap .navBlock .logoBlock .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  letter-spacing: 6px;
+}
+
+.wrap .navBlock .nav a {
+  padding: 100px 0 0 19px;
+  letter-spacing: -.7px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.wrap .issuu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .issuu .gif {
+  width: 65%;
+}
+
+.wrap .issuu .gif img {
+  width: 100%;
+}
+
+.wrap .issuu .text {
+  width: 25%;
+  padding: 60px 33px;
+  line-height: 1.1;
+}
+
+.wrap .issuu .text h3 {
+  font-size: 80px;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: .95;
+}
+
+.wrap .issuu .text h4 {
+  font-size: 55px;
+  color: #ffe605;
+  font-family: sans-serif;
+  padding: 30px 0 50px 0;
+}
+
+.wrap .issuu .text button {
+  background-color: black;
+  color: white;
+  border-radius: 3%;
+  padding: 22px 40px;
+  font-size: 20px;
+  border: none;
+  font-weight: 600;
+}
+
+.wrap .issuu .pageNumber {
+  width: 10%;
+}
+
+.wrap .issuu .pageNumber button {
+  color: black;
+  border-radius: 2%;
+  padding: 370px 10px 0 10px;
+  font-weight: lighter;
+  font-size: 16px;
+  border: none;
+}
+
+.wrap .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 0 30px;
+}
+
+.wrap .icon .freshBlock {
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_1_321x321_crop_top.png?v=1580479399);
+}
+
+.wrap .icon .veggiesBlock {
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_2_321x321_crop_top.png?v=1580479935);
+}
+
+.wrap .icon .fishBlock {
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_3_321x321_crop_top.png?v=1580480216);
+}
+
+.wrap .icon .nutBlock {
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_4_321x321_crop_top.png?v=1580479849);
+}
+
+.wrap .icon .nutBlock .text {
+  padding: 100px 0 0 0;
+  line-height: 0.7;
+}
+
+.wrap .icon .breadBlock {
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_5_321x321_crop_top.png?v=1580480274);
+}
+
+.wrap .icon .dairyBlock {
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_6_321x321_crop_top.png?v=1580479866);
+}
+
+.wrap .icon .commonCss {
+  width: 180px;
+  height: 180px;
+  background-size: 120%, 120%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.wrap .icon .commonCss a {
+  text-decoration: none;
+  color: black;
+}
+
+.wrap .icon .commonCss .text {
+  padding: 110px 0 0 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  -webkit-transform: .2s;
+          transform: .2s;
+}
+
+.wrap .icon .commonCss .text:hover {
+  color: #ffe605;
+}
+
+.wrap .bodyBlock {
+  padding: 20px 100px 20px 100px;
+}
+
+.wrap .bodyBlock .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .bodyBlock .main .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: bisque;
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_1_570x730_crop_center.jpg?v=1580289843);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 30px;
+}
+
+.wrap .bodyBlock .main .left .text {
+  font-size: 36px;
+  color: white;
+  font-weight: bolder;
+  padding-top: 550px;
+  padding: 523px 0 30px 54px;
+}
+
+.wrap .bodyBlock .main .left a {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 0 0 54px;
+}
+
+.wrap .bodyBlock .main .left a:hover {
+  color: black;
+}
+
+.wrap .bodyBlock .main .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.wrap .bodyBlock .main .right .topImg {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_2_0854d982-ab6f-4e36-b665-f22078e1c685_570x350_crop_center.jpg?v=1580303451);
+}
+
+.wrap .bodyBlock .main .right .topImg h2 {
+  font-size: 36px;
+}
+
+.wrap .bodyBlock .main .right .bottomImg {
+  margin-top: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 350px;
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_3_570x350_crop_center.jpg?v=1580289975);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrap .bodyBlock .main .right p {
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+.wrap .bodyBlock .main .commonCss .text {
+  font-size: 36px;
+  color: white;
+  font-weight: bolder;
+  padding: 100px 0 42px 54px;
+}
+
+.wrap .bodyBlock .main .commonCss a {
+  color: white;
+  font-weight: 500;
+  padding: 0 0 0 54px;
+}
+
+.wrap .bodyBlock .main .commonCss a:hover {
+  color: black;
+}
+
+.wrap .bodyBlock .products {
+  padding-bottom: 96px;
+}
+
+.wrap .bodyBlock .products .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .bodyBlock .products .top .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 41px 0;
+}
+
+.wrap .bodyBlock .products .top .title h3 {
+  color: #4d4d26;
+}
+
+.wrap .bodyBlock .products .top .title .buttons {
+  margin: 0 20px;
+  background-color: red;
+}
+
+.wrap .bodyBlock .products .top .title .buttons button {
+  border: 1px solid gainsboro;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px 10px;
+}
+
+.wrap .bodyBlock .products .items {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .bodyBlock .products .items .item {
+  margin: 20px;
+  width: 270px;
+}
+
+.wrap .bodyBlock .products .items .item img {
+  width: 270px;
+  height: 270px;
+}
+
+.wrap .bodyBlock .products .items .item .contains {
+  padding: 15px 0 0;
+}
+
+.wrap .bodyBlock .products .items .item .contains .pa {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  width: 150px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.wrap .bodyBlock .products .items .item .contains .price {
+  font-size: 21px;
+  font-family: sans-serif;
+  font-weight: 600;
+  padding: 8px 0;
+}
+
+.wrap .bodyBlock .products .items .item .contains .price .firstPrice {
+  color: #888888;
+  text-decoration: line-through;
+}
+
+.wrap .bodyBlock .products .items .item .contains .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrap .bodyBlock .products .items .item .contains .button button {
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4%;
+  border: 1px solid black;
+  height: 40px;
+}
+
+.wrap .bodyBlock .products .items .item .contains .button .cartBt {
+  width: 135px;
+}
+
+.wrap .bodyBlock .products .items .item .contains .button .cartBt:hover {
+  background-color: #ffe605;
+  border: none;
+}
+
+.wrap .bodyBlock .products .items .item .contains .button .viewBt {
+  width: 40px;
+  background-color: saddlebrown;
+}
+
+.wrap .bodyBlock .products .items .item .contains .button .heartBt {
+  width: 40px;
+  background-color: khaki;
+}
+
+.wrap .bodyBlock .discount {
+  width: 100%;
+}
+
+.wrap .bodyBlock .discount .backgroundBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .bodyBlock .discount .backgroundBlock .discountBlock {
+  position: relative;
+}
+
+.wrap .bodyBlock .discount .backgroundBlock .discountBlock .text {
+  position: absolute;
+  width: 500px;
+  height: 380px;
+  padding-top: 50px;
+  z-index: -1;
+  padding: 50px;
+  background-color: white;
+  text-align: center;
+  -webkit-box-shadow: 3px 3px 12px #888888;
+          box-shadow: 3px 3px 12px #888888;
+}
+
+.wrap .bodyBlock .discount .backgroundBlock .discountBlock .text h3, .wrap .bodyBlock .discount .backgroundBlock .discountBlock .text h4 {
+  font-size: 70px;
+  text-align: center;
+  margin: 20px;
+}
+
+.wrap .bodyBlock .discount .backgroundBlock .discountBlock .text h3 {
+  margin-bottom: 5px;
+  font-weight: 900;
+  margin-top: 50px;
+}
+
+.wrap .bodyBlock .discount .backgroundBlock .discountBlock .text h4 {
+  font-weight: 200;
+}
+
+.wrap .bodyBlock .discount .backgroundBlock .discountBlock .text button {
+  font-size: 12px;
+  background-color: #ffe605;
+  padding: 10px 30px;
+  border-radius: 8%;
+  font-weight: 700;
+  margin: auto;
+  border: none;
+}
+
+.wrap .bodyBlock .discount .backgroundBlock .img {
+  width: 100%;
+  height: 470px;
+  z-index: -2;
+  background-repeat: no-repeat;
+  margin-left: 400px;
+  margin-top: 100px;
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_4_893x474.jpg?v=1580290143);
+}
+
+.wrap .bodyBlock .onSale {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 96px;
+}
+
+.wrap .bodyBlock .onSale .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_5_570x970_crop_center.jpg?v=1580290230);
+  margin-right: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrap .bodyBlock .onSale .left .text {
+  font-size: 36px;
+  color: white;
+  font-weight: bolder;
+  padding-top: 550px;
+  width: 500px;
+  padding: 730px 0 30px 54px;
+}
+
+.wrap .bodyBlock .onSale .left a {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 0 0 54px;
+}
+
+.wrap .bodyBlock .onSale .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.wrap .bodyBlock .onSale .right .onSaleTitle {
+  padding: 13px 0 69px 0;
+}
+
+.wrap .bodyBlock .onSale .right .onSaleTitle h3 {
+  color: black;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.wrap .bodyBlock .onSale .right .items img {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.wrap .bodyBlock .onSale .right .items .contains {
+  padding: 15px 0 0;
+}
+
+.wrap .bodyBlock .onSale .right .items .contains .pa {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  width: 150px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.wrap .bodyBlock .onSale .right .items .contains .price {
+  font-size: 21px;
+  font-family: sans-serif;
+  font-weight: 600;
+  padding: 8px 0;
+}
+
+.wrap .bodyBlock .onSale .right .items .contains .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrap .bodyBlock .onSale .right .items .contains .button button {
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4%;
+  border: 1px solid black;
+  height: 40px;
+}
+
+.wrap .bodyBlock .onSale .right .items .contains .button .cartBt {
+  width: 135px;
+}
+
+.wrap .bodyBlock .onSale .right .items .contains .button .cartBt:hover {
+  background-color: #ffe605;
+  border: none;
+}
+
+.wrap .bodyBlock .onSale .right .items .contains .button .viewBt {
+  width: 40px;
+  background-color: saddlebrown;
+}
+
+.wrap .bodyBlock .onSale .right .items .contains .button .heartBt {
+  width: 40px;
+  background-color: khaki;
+}
+
+.wrap .bodyBlock .onSale .right .items .itemTwoBox1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.wrap .bodyBlock .onSale .right .items .itemTwoBox2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wrap .bodyBlock .onSale .right .items .itemTwoBox2 .itemB2Right .cartBt {
+  border: 1px solid #F0F0F0;
+  color: #F0F0F0;
+  font-size: 15px;
+}
+
+.wrap .bodyBlock .onSale .right .items .itemTwoBox2 .itemB2Right .cartBt:hover {
+  background-color: white;
+  border: 1px solid #F0F0F0;
+  color: #F0F0F0;
+}
+
+.wrap .bodyBlock .post .featureP {
+  padding: 67px 0;
+}
+
+.wrap .bodyBlock .post .featureP h3 {
+  color: black;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.wrap .bodyBlock .post .boxItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .bodyBlock .post .boxItems .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0 0 50px 0;
+}
+
+.wrap .bodyBlock .post .boxItems .item img {
+  width: 100%;
+}
+
+.wrap .bodyBlock .post .boxItems .item h3 {
+  font-weight: 400;
+  padding: 15px 0 5px 0;
+  font-size: 14px;
+}
+
+.wrap .bodyBlock .post .boxItems .item a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.wrap .bodyBlock .post .boxItems .item p {
+  font-weight: 200;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.wrap .bodyBlock .post .boxItems .item3 {
+  margin: 0 50px;
+}
+
+.wrap .footer {
+  background-color: #c0ddc0;
+}
+
+.wrap .footer .information {
+  height: 200px;
+  padding: 74px 136px;
+}
+
+.wrap .footer .information .items {
+  width: 1170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .footer .information .items h3 {
+  font-size: 20px;
+}
+
+.wrap .footer .information .items a {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  text-decoration: none;
+}
+
+.wrap .footer .information .items .itemInformation,
+.wrap .footer .information .items .itemMyAccount,
+.wrap .footer .information .items .itemOurShop,
+.wrap .footer .information .items .itemNewsletter {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.wrap .footer .information .items .itemNewsletter {
+  padding: 0 0 0 20px;
+}
+
+.wrap .footer .information .items .itemNewsletter input {
+  width: 268px;
+  height: 30px;
+  border: 1px solid gainsboro;
+  border-radius: 3%;
+  margin: 10px 0;
+}
+
+.wrap .footer .information .img {
+  padding: 35px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .footer .information .img a {
+  padding: 0 5px 0 0;
+}
+
+.wrap .footer .information .img a .circle {
+  background-color: black;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.wrap .footer .footer_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #ffe605;
+  height: 35px;
+  padding: 20px 600px 0 600px;
+  font-family: cursive;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.wrap .footer .footer_row a {
+  text-decoration: none;
+  color: black;
+}
+
+.wrap .footer .footer_row a:hover {
+  color: #ffe605;
+}
+/*# sourceMappingURL=header.css.map */

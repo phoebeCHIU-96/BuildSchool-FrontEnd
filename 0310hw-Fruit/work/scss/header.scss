@@ -1,0 +1,694 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wrap {
+    width: 100%;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 27px 144px 27px 144px;
+        border-bottom: 1px solid gainsboro;
+
+        .myAccountBlock {
+
+            a {
+                color: #000;
+                text-decoration: none;
+                transition: .2s;
+                font-size: 14px;
+            }
+
+            a:hover {
+                color: #ffe605;
+            }
+
+            .iconBlock {
+                a {
+                    transition: .2s;
+                }
+
+                a:hover {
+                    color: #ffe605;
+                }
+
+                .fa-shopping-cart::before {
+                    content: '\f07a';
+                }
+
+                #cart_items {
+                    display: inline-block;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    color: #ffe605;
+                }
+            }
+        }
+    }
+
+    .navBlock {
+        background-color: white;
+        position: sticky;
+        z-index: 2;
+        top: 0px;
+        padding: 62.5px 135px 62.5px 135px;
+        font-weight: lighter;
+        display: flex;
+        justify-content: space-between;
+
+        .logoBlock {
+
+            // padding: 20px 100px;
+            .logo {
+                width: 100%;
+                height: 35px;
+                background-repeat: no-repeat;
+                background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/logo_240x70_crop_center@2x.png?v=1580287569);
+            }
+
+            .text {
+                display: flex;
+                justify-content: flex-start;
+                letter-spacing: 6px;
+                // padding: 5px 0;
+            }
+        }
+
+        .nav {
+            a {
+                padding: 100px 0 0 19px;
+                letter-spacing: -.7px;
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .issuu {
+        display: flex;
+
+        // width: 100%;
+        .gif {
+            width: 65%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .text {
+            width: 25%;
+            padding: 60px 33px;
+            line-height: 1.1;
+
+            h3 {
+                font-size: 80px;
+                font-family: sans-serif;
+                font-weight: 300;
+                line-height: .95;
+            }
+
+            h4 {
+                font-size: 55px;
+                color: #ffe605;
+                font-family: sans-serif;
+                padding: 30px 0 50px 0;
+            }
+
+            button {
+                background-color: black;
+                color: white;
+                border-radius: 3%;
+                padding: 22px 40px;
+                font-size: 20px;
+                border: none;
+                font-weight: 600;
+            }
+        }
+
+        .pageNumber {
+            width: 10%;
+
+            // display: flex;
+            // justify-content: space-around;
+            button {
+                // background-color: black;
+                color: black;
+                border-radius: 2%;
+                padding: 370px 10px 0 10px;
+                font-weight: lighter;
+                font-size: 16px;
+                border: none;
+            }
+        }
+    }
+
+    .icon {
+        display: flex;
+        justify-content: space-around;
+        box-sizing: content-box;
+        padding: 0 30px;
+
+        .freshBlock {
+            background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_1_321x321_crop_top.png?v=1580479399);
+        }
+
+        .veggiesBlock {
+            background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_2_321x321_crop_top.png?v=1580479935);
+        }
+
+        .fishBlock {
+            background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_3_321x321_crop_top.png?v=1580480216);
+        }
+
+        .nutBlock {
+            background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_4_321x321_crop_top.png?v=1580479849);
+
+            .text {
+                padding: 100px 0 0 0;
+                line-height: 0.7;
+            }
+        }
+
+        .breadBlock {
+
+            background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_5_321x321_crop_top.png?v=1580480274);
+        }
+
+        .dairyBlock {
+            background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/collections/collection_6_321x321_crop_top.png?v=1580479866);
+        }
+
+        .commonCss {
+            width: 180px;
+            height: 180px;
+            background-size: 120%, 120%;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            .text {
+                padding: 110px 0 0 0;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 800;
+                transform: .2s;
+            }
+
+            .text:hover {
+                color: #ffe605;
+            }
+        }
+    }
+
+    .bodyBlock {
+        // width: 935px;
+        // width: 100%;
+        padding: 20px 100px 20px 100px;
+        .main{
+            display: flex;
+            .left{
+                flex: 1;
+                background-color:bisque;
+                background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_1_570x730_crop_center.jpg?v=1580289843);
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin-right: 30px;
+                .text{
+                    font-size: 36px;    
+                    color: white;   
+                    font-weight: bolder;
+                    padding-top: 550px;
+                    padding: 523px 0 30px 54px;   
+                }
+                a{
+                    color: white;
+                    font-size: 20px;
+                    font-weight: 500;
+                    padding: 0 0 0 54px;
+                }
+                a:hover{
+                    color: black;
+                }
+            }
+            .right{
+                flex: 1;
+                .topImg{
+                    flex: 1;
+                    height: 350px;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_2_0854d982-ab6f-4e36-b665-f22078e1c685_570x350_crop_center.jpg?v=1580303451);
+                    h2{
+                        font-size: 36px;
+                    }
+                }
+                .bottomImg{
+                    margin-top: 30px;
+                    flex: 1;
+                    height: 350px;
+                    background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_3_570x350_crop_center.jpg?v=1580289975);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    }
+                    p{
+                        font-size: 15px;
+                        padding-top: 10px;
+                    }
+                }
+                .commonCss{
+                    .text{
+                        font-size: 36px;    
+                        color: white;   
+                        font-weight: bolder;
+                        padding: 100px 0 42px 54px;
+                        // padding-top: 550px;
+                        // padding: 523px 0 30px 54px;   
+                    }
+                    a{
+                        color: white;
+                        font-weight: 500;
+                        padding: 0 0 0 54px;
+                    }
+                    a:hover{
+                        color: black;
+                    }
+            }
+        }
+        .products {
+            padding-bottom: 96px;
+            .top {
+                display: flex;
+
+                // background-color: greenyellow;
+                // justify-content: center;
+                .title {
+                    display: flex;
+                    margin: auto;
+                    font-size: 24px;
+                    font-weight: 900;
+                    padding: 41px 0;
+                    h3 {
+                        color: rgb(77, 77, 38);
+                    }
+
+                    .buttons {
+                        margin: 0 20px;
+                        background-color: red;
+                        button {
+                            border: 1px solid gainsboro;
+                            font-size: 20px;
+                            font-weight: 500;
+                            padding: 5px 10px;
+                        }
+                    }
+                }
+            }
+            .items {
+                margin: auto;
+                display: flex;
+
+                .item {
+                    // background-color: rgb(255, 243, 189);
+                    // border: 2px solid red;
+                    margin: 20px;
+                    width: 270px;
+
+                    img {
+                        width: 270px;
+                        height: 270px;
+                        // background-color: rgba(0, 0, 0, 0.04);
+                    }
+
+                    .contains {
+                        padding: 15px 0 0;
+                        .pa {
+                            text-decoration: none;
+                            color: black;
+                            font-size: 15px;
+                            width: 150px;
+                            font-family: sans-serif;
+                            font-weight: 500;
+                        }
+
+                        .price {
+                            font-size: 21px;
+                            font-family: sans-serif;
+                            font-weight: 600;
+                            padding: 8px 0;
+
+                            .firstPrice {
+                                color: #888888;
+                                text-decoration: line-through;
+                            }
+                        }
+
+                        .button {
+                            display: flex;
+                            justify-content: space-between;
+
+                            button {
+                                font-size: 12px;
+                                font-weight: 700;
+                                // padding: 15px 12px;
+                                border-radius: 4%;
+                                border: 1px solid black;
+                                height: 40px;
+                            }
+
+                            .cartBt {
+                                width: 135px;
+                            }
+
+                            .cartBt:hover {
+                                background-color: #ffe605;
+                                border: none;
+                            }
+
+                            .viewBt {
+                                width: 40px;
+                                background-color: saddlebrown;
+                            }
+
+                            .heartBt {
+                                width: 40px;
+                                background-color: khaki;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .discount{
+            // border: 2px solid red;
+            width: 100%;
+            .backgroundBlock{
+                display: flex;
+                .discountBlock{
+                    position: relative;
+                    .text{
+                        position: absolute;
+                        width: 500px;
+                        height: 380px;
+                        padding-top: 50px;
+                        z-index: -1;
+                        padding: 50px;
+                        background-color: white;
+                        text-align: center;
+                        box-shadow: 3px 3px 12px #888888;
+                        h3 , h4{
+                            font-size: 70px;
+                            text-align: center;
+                            margin: 20px;
+                        }
+                        h3{
+                            margin-bottom: 5px;
+                            font-weight: 900;
+                            margin-top: 50px;
+                        }
+                        h4{
+                            font-weight: 200;
+                        }
+                        button{
+                            font-size: 12px;
+                            background-color: #ffe605;
+                            padding: 10px 30px;
+                            border-radius: 8%;
+                            font-weight: 700;
+                            margin: auto;
+                            border: none;
+                        }
+                    }
+                }
+                .img{
+                    width: 100%;
+                    height: 470px;
+                    z-index: -2;
+                    background-repeat: no-repeat;
+                    margin-left: 400px;
+                    margin-top: 100px;
+                    background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_4_893x474.jpg?v=1580290143);
+                }
+            }
+        }
+        .onSale{
+            display: flex;
+            padding-top: 96px;
+            .left{
+                flex: 1;
+                background-image: url(https://cdn.shopify.com/s/files/1/0303/0663/1739/files/banner_5_570x970_crop_center.jpg?v=1580290230);
+                margin-right: 30px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                .text{
+                    font-size: 36px;    
+                    color: white;   
+                    font-weight: bolder;
+                    padding-top: 550px;
+                    width: 500px;
+                    padding: 730px 0 30px 54px;
+                }
+                a{
+                    color: white;
+                    font-size: 20px;
+                    font-weight: 500;
+                    padding: 0 0 0 54px;
+                }
+            }
+            .right{
+                flex: 1;
+                .onSaleTitle{
+                    padding: 13px 0 69px 0;
+                    h3 {
+                        color: black;
+                        font-size: 24px;
+                        font-weight: 900;
+                        text-align: center;
+                    }
+                }
+                .items{
+                    img{
+                        background-color: rgba(0, 0, 0, 0.04);
+                    }
+                    .contains {
+                        padding: 15px 0 0;
+                        .pa {
+                            text-decoration: none;
+                            color: black;
+                            font-size: 15px;
+                            width: 150px;
+                            font-family: sans-serif;
+                            font-weight: 500;
+                        }
+
+                        .price {
+                            font-size: 21px;
+                            font-family: sans-serif;
+                            font-weight: 600;
+                            padding: 8px 0;
+                        }
+
+                        .button {
+                            display: flex;
+                            justify-content: space-between;
+
+                            button {
+                                font-size: 12px;
+                                font-weight: 700;
+                                // padding: 15px 12px;
+                                border-radius: 4%;
+                                border: 1px solid black;
+                                height: 40px;
+                            }
+
+                            .cartBt {
+                                width: 135px;
+                            }
+
+                            .cartBt:hover {
+                                background-color: #ffe605;
+                                border: none;
+                            }
+
+                            .viewBt {
+                                width: 40px;
+                                background-color: saddlebrown;
+                            }
+
+                            .heartBt {
+                                width: 40px;
+                                background-color: khaki;
+                            }
+                        }
+                    }
+                    .itemTwoBox1{
+                        display: flex;
+                        justify-content: space-around;
+                        margin-bottom: 30px;
+                    }
+                    .itemTwoBox2{
+                        display: flex;
+                        justify-content: space-around;
+                        .itemB2Right{
+                            .cartBt{
+                                border: 1px solid #F0F0F0;
+                                color: #F0F0F0;
+                                font-size: 15px;
+                            }
+                            .cartBt:hover{
+                                background-color: white;
+                                border: 1px solid #F0F0F0;
+                                color: #F0F0F0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .post {
+            .featureP {
+                padding: 67px 0;
+
+                h3 {
+                    color: black;
+                    font-size: 24px;
+                    font-weight: 900;
+                    text-align: center;
+                }
+            }
+
+            .boxItems {
+                display: flex;
+
+                .item {
+                    display: flex;
+                    box-sizing: border-box;
+                    display: block;
+                    flex: 1;
+                    padding: 0 0 50px 0;
+                    // width: 33.333333%;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    h3 {
+                        font-weight: 400;
+                        padding: 15px 0 5px 0;
+                        font-size: 14px;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-weight: 200;
+                        padding: 5px 0;
+                        font-size: 14px;
+                    }
+                }
+
+                .item3 {
+                    margin: 0 50px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        background-color: rgb(192, 221, 192);
+
+        .information {
+            height: 200px;
+            padding: 74px 136px;
+
+            .items {
+                width: 1170px;
+                display: flex;
+
+                // justify-content: space-around;
+                h3 {
+                    font-size: 20px;
+                }
+
+                a {
+                    font-size: 14px;
+                    display: flex;
+                    color: black;
+                    text-decoration: none;
+                }
+
+                .itemInformation,
+                .itemMyAccount,
+                .itemOurShop,
+                .itemNewsletter {
+                    flex: 1;
+                }
+
+                .itemNewsletter {
+                    padding: 0 0 0 20px;
+
+                    input {
+                        width: 268px;
+                        height: 30px;
+                        border: 1px solid gainsboro;
+                        border-radius: 3%;
+                        margin: 10px 0;
+                    }
+                }
+            }
+
+            .img {
+                padding: 35px 0;
+                // background-color: rgb(228, 195, 206);
+                display: flex;
+
+                a {
+                    padding: 0 5px 0 0;
+
+                    .circle {
+                        background-color: black;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+
+                    }
+                }
+            }
+        }
+
+        .footer_row {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffe605;
+            height: 35px;
+            padding: 20px 600px 0 600px;
+            font-family: cursive;
+            font-size: 14px;
+            font-weight: 500;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            a:hover {
+                color: #ffe605;
+            }
+        }
+    }
+}

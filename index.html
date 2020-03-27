@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hsien Ying's Portfolio</title>
+    <link rel="stylesheet" href="re.css">
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+            list-style: 0;
+        } */
+        /* header{
+            width: 960px;
+            
+        } */
+        .wrap{
+            padding: 20px 0 0 380px;
+            /* width:960px; */
+            /* margin: auto; */
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* background-color: antiquewhite;  */
+            
+        }
+        .item{
+            margin: 100px 20px;
+            width:250px;
+            height: 100px;
+            position: relative;
+            padding: 5px;
+            box-shadow: 3px 3px 12px #dfd9d9;
+            overflow: hidden;
+           
+        }
+        .text{
+            /* padding: 10px; */
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            top: 10px;
+            right: 10px;
+            /* width: 380px; */
+            margin: auto;
+            background-color: black;
+            opacity: 0;
+            color: white;
+            display: none;
+            transition: 5s;
+        }
+        .item:hover .text{
+            display: block;
+            opacity: .4;
+        }
+        img{
+            width: 600;
+            vertical-align: top;
+            filter: blur(0px);
+            transition: 2s;
+        }
+        .item:hover img{
+            filter: blur(20px);
+        }
+        .text h3{
+            margin: 5px 10px;
+            font-size: 30px;
+            /* margin:20px; */
+        }
+        .text p{
+            /* margin: 0px 10px; */
+            font-size: 15px;
+            margin: 25px 10px;
+            color: rgb(218, 207, 207);
+        }
+        header h1{
+            /* margin-top: 0; */
+            font-size: 50px;
+            /* font-weight: bolder; */
+            position: absolute;
+            bottom: .5em;
+            left: 1em;
+            color: rgb(83, 90, 90);
+            width: 40px;
+            font-family: 'Courier New', Courier, monospace,serif;
+            line-height: 50px;
+        }
+        header:hover h1{
+            color:rgb(192, 156, 114);
+            font-size: 65px;
+            /* opacity: .4; */
+            transition: 3s;
+            line-height: 43px;
+        }
+        /* img{
+            max-width: 100%;
+            width: 100%;
+            object-fit: cover;
+            width: auto;
+            height: auto;
+            background-color: antiquewhite;
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hsien <br> Ying's <br>Portfolio</h1>
+        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, maiores enim repudiandae eius quae at aliquid ipsa sed fugit blanditiis nemo fuga tenetur in id! Magni optio corporis fugiat tempore?</p> -->
+    </header>
+            <!-- <a href="https://chiuhsienying.azurewebsites.net/hw2.html">課表</a> -->
+    <div class="wrap">
+        <div class="item item01">
+            <a href="https://chiuhsienying.azurewebsites.net/TimeTable.html">
+                <img src="pic/課表.png" alt="">
+                <div class="text">
+                    <h3>Timetable</h3>
+                    <p>200311</p>
+                </div>
+            </a>
+        </div>
+        <div class="item item02">
+            <a href="https://chiuhsienying.azurewebsites.net/Toyota.html">
+                <img src="pic/toyota.png" alt="">
+                <div class="text">
+                    <h3>Event website</h3>
+                    <p>200313</p>
+                </div>
+            </a>
+        </div>
+        <!-- <div class="item">
+            <img src="http://fakeimg.pl/440x320/282828/EAE0D0/" alt="">
+            <div class="text">
+                <h3>Timetable</h3>
+                <p>200313</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://fakeimg.pl/440x320/282828/EAE0D0/" alt="">
+            <div class="text">
+                <h3>Timetable</h3>
+                <p>200313</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://fakeimg.pl/440x320/282828/EAE0D0/" alt="">
+            <div class="text">
+                <h3>Timetable</h3>
+                <p>200313</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://fakeimg.pl/440x320/282828/EAE0D0/" alt="">
+            <div class="text">
+                <h3>Timetable</h3>
+                <p>200313</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://fakeimg.pl/440x320/282828/EAE0D0/" alt="">
+            <div class="text">
+                <h3>Timetable</h3>
+                <p>200313</p>
+            </div>
+        </div> -->
+    </div>
+
+
+</body>
+</html>

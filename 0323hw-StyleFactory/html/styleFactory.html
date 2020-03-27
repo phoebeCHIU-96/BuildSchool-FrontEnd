@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../scss/reset.css">
+    <link rel="stylesheet" href="../scss/styleFactory.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.13.0-web/css/all.css">
+    <script src="https://kit.fontawesome.com/a64a058eb0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Six+Caps&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Six+Caps|Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Six+Caps|Work+Sans&display=swap" rel="stylesheet">
+    <title>Hello, world!</title>
+
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="navBlock">
+            <!-- 導覽區塊 -->
+            <div class="navBlockBar container">
+
+                <!-- 導覽列  -->
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-between align-items-center">
+                        <div class="bars dropdown">
+                            <!-- 漢堡 -->
+                            <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="barsCurrency d-flex">
+                                    <a class="dropdown-item" href="#">Currency</a>
+                                    <select name="" id="" class="dollar">
+                                        <option value="">USD</option>
+                                        <option value="">EUR</option>
+                                        <option value="">GBP</option>
+                                    </select>
+                                </div>
+
+                                <a class="dropdown-item" href="#">My account</a>
+                                <a class="dropdown-item" href="#">Wishlist</a>
+                                <a class="dropdown-item" href="#">Checkout</a>
+                            </div>
+                        </div><!-- 漢堡 -->
+                        <div class="cart d-flex ml-auto align-items-center ">
+                            <!-- 購物車 -->
+                            <a href=""><i class="fas fa-shopping-cart mt-1 mr-3 text-dark"></i></a>
+                        </div> <!-- 購物車 -->
+                        <div class="searchBlock ">
+                            <!-- 搜尋 -->
+                            <form class="form-inline pt-1 ">
+                                <input class="form-control form-control-sm mr-3 w-75 border-0 text-end text-dark "
+                                    type="text" placeholder="Search store" aria-label="Search">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </form>
+                        </div> <!-- 搜尋 -->
+                    </div>
+                </div>
+                <div class="navBlockLogo row text-center d-flex pt-4 ">
+                    <div class="col-12">
+                        <div class="img d-inline-block">
+                            <img src="../png/logo.png" alt="">
+                        </div>
+                        <div class="icon d-inline-block ">
+                            <ul class="d-flex justify-content-center justify-content-md-end">
+                                <li><a href=""><i class="fab fa-twitter mx-2"></i></a></li>
+                                <li><a href=""><i class="fab fa-facebook-f mx-2"></i></a></li>
+                                <li><a href=""><i class="fa fa-youtube mx-2"></i></a></li>
+                                <li><a href=""><i class="fab fa-pinterest mx-2"></i></a></li>
+                                <li><a href=""><i class="fab fa-google-plus-g mx-2"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navBlockNav row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-white ">
+                            <a class="navbar-brand bg-white text-uppercase font-weight-bolder border-0 d-lg-none"
+                                href="#">Style Factory</a>
+                            <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="fas fa-angle-down text-dark"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                                <ul class="navBlockNavBreadcrumb navbar-nav ">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link text-dark d-flex justify-content-between font-weight-bolder text-uppercase"
+                                            href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Home
+                                            <span class="fas fa-angle-down mr-3 d-lg-none"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link text-dark d-flex justify-content-between font-weight-bolder text-uppercase"
+                                            href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Products
+                                            <span class="fas fa-angle-down mr-3 d-lg-none"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link text-dark d-flex justify-content-between font-weight-bolder text-uppercase"
+                                            href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Blog
+                                            <span class="fas fa-angle-down mr-3 d-lg-none"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link text-dark d-flex justify-content-between font-weight-bolder text-uppercase"
+                                            href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Sale
+                                            <span class="fas fa-angle-down mr-3 d-lg-none"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark font-weight-bolder text-uppercase" href="#">About
+                                            us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark font-weight-bolder text-uppercase" href="#">Contact
+                                            us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div> <!-- 導覽列  -->
+
+            <div class="navBlockBanner position-relative ">
+                <!-- 導覽主圖 -->
+                <img src="../png/greeting_image.png" alt="navBlockBannerGreeting" class="d-block w-100">
+
+                <div class="bannerTitle font-weight-light position-absolute text-white text-uppercase mr-3 ">
+                    <h3>join our <span>Discount</span> Club & <span>save 25%</span> on everything! </h3>
+                </div>
+
+                <div class="bannerText position-absolute d-none d-md-block text-white">
+                    <p>We offer a broad assortment of the best and latest styles from the finest brands. Only at Style
+                        Factory, you will find so many exclusive images, videos, customer reviews and expert tips to
+                        help you choose the perfect styles and colors.</p>
+                </div>
+
+                <div class="joinUsBtn position-absolute justify-content-center d-flex">
+                    <a href="" class="  text-uppercase border-0 text-decoration-none text-dark bg-white p-3 ">Join now
+                    </a>
+                </div>
+            </div>
+        </div> <!-- 導覽區塊 -->
+
+
+        <div class="articleBlock my-5">
+            <!-- 主區塊 -->
+            <div class="showcaseBlock">
+                <div class="container px-0">
+                    <div class="row d-flex flex-no-wrap px-3">
+                        <div class="col-12 mb-4 col-md-4 d-inline-block  text-center px-0 ">
+                            <div class="item showcaseNewArrivals">
+                                <a href="">
+                                    <h3 class="my-3">new arrivals</h3>
+                                    <p class="font-weight-bold text-body my-3">see our latest must-haves >></p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12  mb-4 col-md-4 d-inline-block text-center px-0">
+                            <div class="item showcaseWeLove">
+                                <a href="">
+                                    <h3 class="my-3">we love
+                                        <i class="far fa-heart"></i>
+                                    </h3>
+                                    <p class="font-weight-bold text-body my-3">check out stylish favorites >></p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4 col-md-4 d-inline-block text-center px-0">
+                            <div class="item showcaseFreeShipping">
+                                <a href="">
+                                    <h3 class="my-3">free shipping</h3>
+                                    <p class="font-weight-bold text-body my-3">on all 2016 collection >> </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainPromoBlock mt-4">
+                <div class="container pb-3 px-0">
+                    <div class="row no-gutters ">
+                        <div class="col">
+                            <div class="text text-center text-md-left pt-5 pt-md-4">
+                                <h3 class="text-uppercase text-white my-3">hair</h3>
+                                <h4 class="text-uppercase my-3">Extensions</h4>
+                                <p class="text-uppercase my-4">add length & volume in seconds</p>
+                                <button class="my-4"><a href="">Read More</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="browseBlock">
+                <h3 class="text-center mt-5 mb-4 my-xl-5"><span class="">BROWSE</span> OUR CATEGORIES</h3>
+                <div class="card-group">
+                    <div class="container px-0">
+                        <div class="row no-gutters">
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-5 rounded-0 mb-md-0">
+                                    <img src="../png/category1_c699b5ea-b75e-4185-9a8e-2a65b0fc3814_430x396_crop_top.png"
+                                        class="card-img-top" alt="Men’s hair care">
+                                    <div class="card-body text-center pt-3 pb-5 text-uppercase">
+                                        <h4 class="font-weight-bolder pt-5">Men’s hair care</h4>
+                                        <button><a href="">7 products</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-5 rounded-0 mb-md-0">
+                                    <img src="../png/category2_430x396_crop_top.png" class="card-img-top" alt="Hair styling">
+                                    <div class="card-body  text-center pt-3 pb-5 text-uppercase">
+                                        <h4 class="font-weight-bolder pt-5">Hair styling</h4>
+                                        <button><a href="">13 products</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-5 rounded-0">
+                                    <img src="../png/category3_430x396_crop_top.png" class="card-img-top" alt="Hair health treatment">
+                                    <div class="card-body  text-center pt-3 pb-5 text-uppercase">
+                                        <h4 class="font-weight-bolder pt-5">Hair health treatment</h4>
+                                        <button><a href="">9 products</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-5 rounded-0">
+                                    <img src="../png/category4_430x396_crop_top.png" class="card-img-top " alt="Hair care for kids">
+                                    <div class="card-body  text-center pt-3 pb-5 text-uppercase">
+                                        <h4 class="font-weight-bolder pt-5">Hair care for kids</h4>
+                                        <button><a href="">7 products</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="productsBlock">
+                <h3 class="text-center mt-4 mb-4 mb-xl-5 mt-xl-1"><span class="">PRODUCTS</span> ON SALE</h3>
+                <div class="card-group">
+                    <div class="container px-0">
+                        <div class="row no-gutters">
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-lg-5 rounded-0 mb-md-0">
+                                    <div class="productsImg productsArganImg position-relative">
+                                        <a href="">
+                                            <img src="../png/argan_oil_hair_mask_01_370x370_crop_top.png"
+                                        class="card-img-top w-75 h-75 w-lg-100 h-lg-100 d-flex mt-3 mr-auto ml-auto pt-4" alt="Argan Oil Hair Mask">
+                                        </a>
+                                        <div class="itemSticker d-none d-md-inline">
+                                            <span class="stickerNew text-white py-2 px-3 ml-3 position-absolute ">NEW</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body text-center pt-3 pb-4">
+                                        <a href=""  class="text-decoration-none ">
+                                            <h4 class="font-weight-light text-uppercase">Argan Oil Hair Mask</h4>
+                                        </a>
+                                        <div class="price mt-4">
+                                            <span class="priceSale text-uppercase">$60.00</span>
+                                        </div>
+                                        <button><i class="fas fa-shopping-cart"></i><span> Add to cart</span></button>
+                                        <div class="icon">
+                                            <a href=""><i class="far fa-heart iconHeart"></i></a>
+                                            <a href=""><i class="far fa-eye  d-none d-md-inline-block iconEye"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-lg-5 rounded-0 mb-md-0">
+                                    <div class="productsImg productsGarnierImg position-relative">
+                                        <a href="">
+                                            <img src="../png/garnier_fructis_01_370x370_crop_top.png" class="card-img-top pt-4 w-75 h-75 d-flex mt-3 mr-auto ml-auto " alt="Garnier Fructis">
+                                        </a>
+                                        <div class="itemSticker d-none d-md-inline">
+                                            <span class="stickerNew text-white py-2 px-3 ml-3 position-absolute">NEW</span>
+                                            <span class="stickerDiscount text-white py-2 px-3 mr-3 position-absolute">–10%</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body  text-center pt-3  pb-4">
+                                        <a href=""  class="text-decoration-none ">
+                                            <h4 class="font-weight-light text-uppercase">Garnier Fructis</h4>
+                                        </a>
+                                        <div class="price mt-4">
+                                            <span class="priceText">From</span>
+                                            <span class="priceSale text-uppercase">$90.00</span>
+                                            <span class="priceDiscount text-uppercase">$100.00</span>
+                                        </div>
+                                        <button><i class="fas fa-shopping-cart"></i><span> Add to cart</span></button>
+                                        <div class="icon">
+                                            <a href=""><i class="far fa-heart iconHeart" ></i></a>
+                                            <a href=""><i class="far fa-eye d-none d-md-inline-block iconEye" ></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-lg-5 rounded-0">
+                                    <div class="productsImg productsHerbalImg position-relative">
+                                        <a href="">
+                                            <img src="../png/herbal_essences_01_370x370_crop_top.png" class="card-img-top pt-4 w-75 h-75 d-flex mt-3 mr-auto ml-auto " alt="Herbal Essences">
+                                        </a>
+                                            <div class="itemSticker d-none d-md-inline">
+                                            <span class="stickerNew text-white py-2 px-3 ml-3 position-absolute">NEW</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body  text-center pt-3 pb-4">
+                                        <a href=""  class="text-decoration-none ">
+                                            <h4 class="font-weight-light text-uppercase">Herbal Essences</h4>
+                                        </a>
+                                        <div class="price mt-4">
+                                            <span class="priceSale text-uppercase">$80.00</span>
+                                        </div>
+                                        <button><i class="fas fa-shopping-cart"></i><span> Add to cart</span></button>
+                                        <div class="icon">
+                                            <a href=""><i class="far fa-heart iconHeart" ></i></a>
+                                            <a href=""><i class="far fa-eye  d-none d-md-inline-block iconEye" ></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-md-5 mb-lg-5 rounded-0">
+                                    <div class="productsImg productsLorealImg position-relative">
+                                        <a href="" >
+                                            <img src="../png/l_oreal_paris_studio_line_1_370x370_crop_top.png" class="card-img-top pt-4 w-75 h-75 d-flex mt-3 mr-auto ml-auto " alt="L'Oreal Paris Studio Line">
+                                        </a>
+                                            <div class="itemSticker d-none d-md-inline">
+                                            <span class="stickerNew text-white py-2 px-3 ml-3 position-absolute">NEW</span>
+                                            <span class="stickerDiscount text-white py-2 px-3 mr-3 position-absolute">–10%</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body  text-center pt-3 pb-4">
+                                        <a href=""  class="text-decoration-none">
+                                            <h4 class="text-lg-nowrap font-weight-light ">L'Oreal Paris Studio Line</h4>
+                                        </a>
+                                        <div class="price mt-4">
+                                            <span class="priceText ">From</span>
+                                            <span class="priceSale text-uppercase">$90.00</span>
+                                            <span class="priceDiscount text-uppercase">$100.00</span>
+                                        </div>
+                                        <button><i class="fas fa-shopping-cart"></i><span> Add to cart</span></button>
+                                        <div class="icon">
+                                            <a href=""><i class="far fa-heart iconHeart"></i></a>
+                                            <a href=""><i class="far fa-eye  d-none d-md-inline-block iconEye" ></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seeBlock">
+                <h3 class="text-center mt-4 mb-4 mb-xl-5 mt-xl-1 text-uppercase"><span class="">See </span> what's new on our Blog </h3>
+                <div class="card-group">
+                    <div class="container px-0">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <div class="card mb-lg-5 rounded-0 mb-md-0 border-bottom-0 border-right-0 border-left-0">
+                                    <div class="blogPostDate text-center pt-4">
+                                        <time datetime="14-01" class="font-weight-bolder my-3">14 JANUARY </time>
+                                        <p class="mt-4"><span>Posted by</span> David Braun ⦁ 2 Comments</p>
+                                    </div>
+                                    <div class="productsImg productsArganImg position-relative">
+                                        <a href="">
+                                            <img src="../png/blog3_a7f4371f-e5f2-46ae-a3c0-01ff3da3296e_536x272_crop_top.png"
+                                        class="card-img-top w-lg-100 h-lg-100 d-flex mt-3 mr-auto ml-auto pt-2" alt="You bring beauty to the world">
+                                        </a>                                       
+                                    </div>
+                                    <div class="card-body text-center pt-4 pb-5 pr-0 pl-0">
+                                        <a href=""  class="text-decoration-none ">
+                                            <h4 class="">You bring beauty to the world</h4>
+                                        </a>
+                                        <p class="mt-3">Coco Chanel said that a woman who cuts her hair is about...</p>
+                                        <button><span> Read more </span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="card mb-lg-5 rounded-0 mb-md-0 border-bottom-0 border-right-0 border-left-0">
+                                    <div class="blogPostDate text-center pt-4">
+                                        <time datetime="14-01" class="font-weight-bolder my-3">14 JANUARY </time>
+                                        <p class="mt-4"><span>Posted by</span> David Braun ⦁ 2 Comments</p>
+                                    </div>
+                                    <div class="productsImg productsGarnierImg position-relative">
+                                        <a href="">
+                                            <img src="../png/blog2_536x272_crop_top.png" class="card-img-top pt-2 d-flex mt-3 mr-auto ml-auto " alt="Of best hair products here">
+                                        </a>
+                                    </div>
+                                    <div class="card-body  text-center pt-4 pb-5 pr-0 pl-0">
+                                        <a href=""  class="text-decoration-none ">
+                                            <h4 class="">Of best hair products here</h4>
+                                        </a>
+                                        <p class="mt-3">Whoever you are, a professional hair stylist or a person who professionally...</p>
+                                        <button><span> Read more </span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="card mb-lg-5 rounded-0 mb-md-0 border-bottom-0 border-right-0 border-left-0">
+                                    <div class="blogPostDate text-center pt-4">
+                                        <time datetime="14-01" class="font-weight-bolder my-3">14 JANUARY </time>
+                                        <p class="mt-4"><span>Posted by</span> David Braun ⦁ 2 Comments</p>
+                                    </div>
+                                    <div class="productsImg productsGarnierImg position-relative">
+                                        <a href="">
+                                            <img src="../png/blog4_536x272_crop_top.png" class="card-img-top pt-2 d-flex mt-3 mr-auto ml-auto " alt="Or to be more precise...have...">
+                                        </a>
+                                    </div>
+                                    <div class="card-body  text-center pt-4  pb-5 pr-0 pl-0">
+                                        <a href=""  class="text-decoration-none ">
+                                            <h4 class="">Or to be more precise...have...</h4>
+                                        </a>
+                                        <p class="mt-3">For saving your time, please use filters: brand, concerns, formulation, ingredient preferences,...</p>
+                                        <button><span> Read more </span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featuredBlock">
+                <h3 class="text-center mt-4 mb-4 mb-xl-5 mt-xl-1"><span class="">FEATURED</span> PRODUCTS</h3>
+                <div class="card-group">
+                    <div class="container px-0">
+                        <div class="row no-gutters">
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-lg-5 rounded-0 mb-md-0">
+                                    <div class="productsImg productsGarnierImg position-relative">
+                                        <a href="">
+                                            <img src="../png/infiniti_pro_by_conair_hair_designer_3_in_1_styling_system_01_370x370_crop_top.png" class="card-img-top pt-4 w-75 h-75 d-flex mt-3 mr-auto ml-auto " alt="Infiniti Pro">
+                                        </a>
+                                        <div class="itemSticker d-none d-md-inline">
+                                            <span class="stickerNew text-white py-2 px-3 ml-3 position-absolute">NEW</span>
+                                            <span class="stickerDiscount text-white py-2 px-3 mr-3 position-absolute">–38%</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body  text-center pt-3  pb-4">
+                                        <a href=""  class="text-decoration-none ">
+                                            <h4 class="font-weight-light">Infiniti Pro by Conair Hair Designer 3 in 1 Sty...</h4>
+                                        </a>
+                                        <div class="price mt-4">
+                                            <span class="priceSale text-uppercase">$50.00</span>
+                                            <span class="priceDiscount text-uppercase">$80.00</span>
+                                        </div>
+                                        <button><i class="fas fa-shopping-cart"></i><span> Add to cart</span></button>
+                                        <div class="icon">
+                                            <a href=""><i class="far fa-heart iconHeart" ></i></a>
+                                            <a href=""><i class="far fa-eye d-none d-md-inline-block iconEye" ></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-lg-5 rounded-0 mb-md-0">
+                                    <div class="productsImg productsArganImg position-relative">
+                                        <a href="">
+                                            <img src="../png/instyler_ionic_styler_pro_ceramic_flat_iron_1_370x370_crop_top.png"
+                                        class="card-img-top w-75 h-75 w-lg-100 h-lg-100 d-flex mt-3 mr-auto ml-auto pt-4" alt="InStyler Ionic Styler Pro">
+                                        </a>
+                                        <div class="itemSticker d-none d-md-inline">
+                                            <span class="stickerNew text-white py-2 px-3 ml-3 position-absolute ">NEW</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body text-center pt-3 pb-4">
+                                        <a href=""  class="text-decoration-none ">
+                                            <h4 class="font-weight-light">InStyler Ionic Styler Pro Ceramic Flat Iron</h4>
+                                        </a>
+                                        <div class="price mt-4">
+                                            <span class="priceSale text-uppercase">$66.00</span>
+                                        </div>
+                                        <button id="Unavailable"><i class=" fa fa-ban"></i><span> Unavailable</span></button>
+                                        <div class="icon">
+                                            <a href=""><i class="far fa-heart iconHeart"></i></a>
+                                            <a href=""><i class="far fa-eye  d-none d-md-inline-block iconEye"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-lg-5 rounded-0">
+                                    <div class="productsImg productsHerbalImg position-relative">
+                                        <a href="">
+                                            <img src="../png/jose_eber_wet_dry_flat_iron_straightener_01_370x370_crop_top.png" class="card-img-top pt-4 w-75 h-75 d-flex mt-3 mr-auto ml-auto " alt="Jose Eber">
+                                        </a>
+                                            <div class="itemSticker d-none d-md-inline">
+                                            <span class="stickerNew text-white py-2 px-3 ml-3 position-absolute">NEW</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body  text-center pt-3 pb-4">
+                                        <a href=""  class="text-decoration-none ">
+                                            <h4 class="font-weight-light">Jose Eber Wet & Dry Flat Iron Straightener</h4>
+                                        </a>
+                                        <div class="price mt-4">
+                                            <span class="priceSale text-uppercase">$88.00</span>
+                                        </div>
+                                        <button><i class="fas fa-shopping-cart"></i><span> Add to cart</span></button>
+                                        <div class="icon">
+                                            <a href=""><i class="far fa-heart iconHeart" ></i></a>
+                                            <a href=""><i class="far fa-eye  d-none d-md-inline-block iconEye" ></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card mb-md-5 mb-lg-5 rounded-0">
+                                    <div class="productsImg productsLorealImg position-relative">
+                                        <a href="" >
+                                            <img src="../png/glide_thru_detangler_hair_comb_or_brush_01_370x370_crop_top.png" class="card-img-top pt-4 w-75 h-75 d-flex mt-3 mr-auto ml-auto " alt="Glide Thru Detangler Hair Comb">
+                                        </a>
+                                            <div class="itemSticker d-none d-md-inline">
+                                            <span class="stickerNew text-white py-2 px-3 ml-3 position-absolute">NEW</span>
+                                            <span class="stickerDiscount text-white py-2 px-3 mr-3 position-absolute">–14%</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body  text-center pt-3 pb-4">
+                                        <a href=""  class="text-decoration-none">
+                                            <h4 class="text-lg-nowrap font-weight-light ">Glide Thru Detangler Hair Comb or Brush</h4>
+                                        </a>
+                                        <div class="price mt-4">
+                                            <span class="priceSale text-uppercase">$56.00</span>
+                                            <span class="priceDiscount text-uppercase">$65.00</span>
+                                        </div>
+                                        <button><i class="fas fa-shopping-cart"></i><span> Add to cart</span></button>
+                                        <div class="icon">
+                                            <a href=""><i class="far fa-heart iconHeart"></i></a>
+                                            <a href=""><i class="far fa-eye  d-none d-md-inline-block iconEye" ></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- 主區塊 -->
+        <footer>
+            <h3 class="text-center mt-4 mb-4 mb-xl-5 mt-xl-1"><span class="">FOLLOW</span> US ON INSTAGRAM</h3>
+            <div class="connectBlock">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="offerText text-center">
+                                <h4>GET OUR SPECIAL OFFERS</h4>
+                                <p class="pt-3">AND THE ULTIMATE HAIR CARE TIPS & TRICKS!</p>
+                                <nav class=" pt-3 navbar navbar-light bg-light d-inline-block bg-transparent">
+                                    <form class="form-inline ">
+                                        <input class="form-control mr-sm-2 text-center text-dark font-italic rounded-0 border-0 py-3 px-5" type="search" placeholder="Enter your email" aria-label="Search">
+                                        <button class="btn btn-outline-success my-2 my-sm-0 rounded-0 text-body py-1 px-4 " type="submit">Subscribe</button>
+                                    </form>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="connectIcon text-center">
+                                <h4>LET'S STAY CONNECTED</h4>
+                                <div class="icon d-inline-block pt-3">
+                                    <ul class="d-flex justify-content-center">
+                                        <li class="mx-1 mx-md-2"><a href=""><i class="pt-1 mt-md-2 fab fa-twitter mx-2 text-body"></i></a></li>
+                                        <li class="mx-1 mx-md-2"><a href=""><i class="pt-1 fab fa-facebook-f mx-2 text-body mt-md-2 "></i></a></li>
+                                        <li class="mx-1 mx-md-2"><a href=""><i class="pt-1 fa fa-youtube mx-2 text-body mt-md-2"></i></a></li>
+                                        <li class="mx-1 mx-md-2"><a href=""><i class="pt-1 fab fa-pinterest mx-2 text-body mt-md-2"></i></a></li>
+                                        <li class="mx-1 mx-md-2"><a href=""><i class="pt-1 fab fa-google-plus-g mx-2 text-body mt-md-2"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mapBlock container-fluid no-gutters">
+                <div class="row">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8133.633616839574!2d120.96320712578671!3d24.757011617531077!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34684a5cb60622fd%3A0xb0ead5088c97b0db!2z5Lit6I-v5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1584880084413!5m2!1szh-TW!2stw" allowfullscreen></iframe>
+                        </div>
+                </div>
+            </div>
+            <div class="informationBlock">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-3 informationLogo">
+                            <img src="https://cdn.shopify.com/s/files/1/1711/1759/t/2/assets/footer_logo.png?v=15429984064853762523" alt="logo" class="d-block w-100 pb-2">
+                                    <p class="font-weight-light h5 ">This web store was originally launched in 2002 and was then titled the Style Factory. This name was a perfect fit then, simply because we’ve always had our focus on our hair care & hair treatment products lineup.</p>
+                        </div>
+                        <div class="col-12 col-md-3 informationCategories">
+                            <h4 class="text-white font-weight-bold"><strong>CATEGORIES</strong></h4>
+                                    <ul class="mt-4">
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 " >Hair Styling</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class="text-decoration-none font-weight-light h5 ">Men’s Hair Care</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 ">Hair Care For Kids</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 ">Hair Health Treatment</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 ">Featured Products</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 ">Sale</a>
+                                        </li>
+                                    </ul>
+                        </div>
+                        <div class="col-12 col-md-3 informationMenu">
+                            <h4 class="text-white font-weight-bold"><strong>MENU</strong></h4>
+                                    <ul class="mt-4">
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 ">Home</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 ">Catalog</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 ">About Us</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 ">Contact Us</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class=" Text text-decoration-none font-weight-light h5 ">Wishlist</a>
+                                        </li>
+                                        <li class="mb-4">
+                                            <a href="" class=" text-decoration-none font-weight-light h5 ">Sitemap</a>
+                                        </li>
+                                    </ul>
+                        </div>
+                        <div class="col-12 col-md-3 informationContactInformation">
+                            <h4 class="text-white font-weight-bold"> <strong>CONTACT INFORMATION</strong> </h4>
+                            <ul class=" mt-4">
+                                <li class="mb-4">
+                                    <address class="font-weight-light h5">4578 Marmora Road,Glasgow D04 89GR<address>
+                                </li>
+                                <li class=" h5font-weight-lightclass="mb-3"">1(234)567-9842</li>
+                                <li class="mb-4" id="informationMail">
+                                    <ahref="mailto:info@demolik.org"class="text-decoration-nne font-weight-light h5">info@demolink.org</a>
+                                </li>
+                            </ul>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="footerRow">
+                <p>© 2020 Style Factory. All rights reserved.</p>
+                <a href=""><span>Powered by Shopify</span></a>
+            </div>
+
+        </footer>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,592 @@
+.wrap {
+  width: 100%;
+}
+
+.wrap header {
+  width: 100%;
+}
+
+.wrap header .topPannel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #272727;
+  color: #ffffff;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 18px 52px;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.wrap header .topPannel .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap header .topPannel .text .textAddress,
+.wrap header .topPannel .text .textPhones {
+  margin: 0 24px 0 0;
+}
+
+.wrap header .topPannel .text .textAddress p,
+.wrap header .topPannel .text .textPhones p {
+  display: inline;
+}
+
+.wrap header .topPannel .text .textAddress i,
+.wrap header .topPannel .text .textPhones i {
+  color: #2ac5f4;
+  margin: 0 10px 0 0;
+  padding-left: 12px;
+}
+
+.wrap header .topPannel .text .textAddress a,
+.wrap header .topPannel .text .textPhones a {
+  color: #ffffff;
+}
+
+.wrap header .topPannel .icon a {
+  text-decoration: none;
+  margin: 5px;
+}
+
+.wrap header .topPannel .icon a i {
+  color: #ffffff;
+}
+
+.wrap header .bannerBlock {
+  background-color: #272727;
+  position: relative;
+}
+
+.wrap header .bannerBlock .imgBlock img {
+  width: 100%;
+  opacity: .5;
+}
+
+.wrap header .bannerBlock .navBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 14px;
+  font-family: sans-serif;
+  position: absolute;
+  margin-bottom: -133px;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.wrap header .bannerBlock .navBlock a img {
+  padding: 30px 0;
+}
+
+.wrap header .bannerBlock .navBlock nav {
+  padding: 58px;
+}
+
+.wrap header .bannerBlock .navBlock nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  margin: 15px;
+}
+
+.wrap header .bannerBlock .navBlock nav .homeIcon {
+  color: #2ac5f4;
+}
+
+.wrap header .bannerBlock .navBlock button {
+  width: 138px;
+  height: 44.5px;
+  padding: 46px 46px 0 200px;
+  margin: 46px 0 0;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.wrap header .bannerBlock .navBlock button i {
+  color: #ffffff;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+}
+
+.wrap header .bannerBlock .textBlock .text_a {
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 250px;
+}
+
+.wrap header .bannerBlock .textBlock .text_a h3 {
+  font-size: 110px;
+  font-weight: bolder;
+  letter-spacing: 10px;
+}
+
+.wrap header .bannerBlock .textBlock .text_a h4 {
+  font-size: 30px;
+  padding-top: 28px;
+}
+
+.wrap header .bannerBlock .textBlock .text_a .a_SeeOurRecent {
+  padding: 20px;
+  margin-top: 55px;
+}
+
+.wrap header .bannerBlock .textBlock .text_a .a_SeeOurRecent a {
+  color: white;
+  padding: 21px 60px;
+  background-color: #2ac5f4;
+  border-radius: 2%;
+  text-decoration: none;
+}
+
+.wrap header .bannerBlock .textBlock .text_a .a_SeeOurRecent .a_SeeOurRecent:hover a {
+  background-color: #000000;
+}
+
+.wrap .bodyBlock {
+  width: 100%;
+}
+
+.wrap .bodyBlock .ourServicesBlock .title h3 {
+  text-align: center;
+  padding: 155px 580px 26px;
+  font-size: 30px;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+.wrap .bodyBlock .ourServicesBlock .title h3::before {
+  content: "";
+  border-top: 2px solid #2ac5f4;
+  width: 66px;
+  height: 30px;
+  position: absolute;
+  top: 57%;
+  right: 53%;
+  left: 48%;
+}
+
+.wrap .bodyBlock .ourServicesBlock .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 26px 70px;
+}
+
+.wrap .bodyBlock .ourServicesBlock .container .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33.333333%;
+  font-family: sans-serif;
+}
+
+.wrap .bodyBlock .ourServicesBlock .container .item i {
+  font-size: 70px;
+  color: #2ac5f4;
+  margin: 32px 30px 0 20px;
+}
+
+.wrap .bodyBlock .ourServicesBlock .container .item .text {
+  font-size: 18px;
+}
+
+.wrap .bodyBlock .ourServicesBlock .container .item .text h2 {
+  margin: 50px 0 29px 0;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  font-weight: bolder;
+}
+
+.wrap .bodyBlock .ourServicesBlock .container .item .text p {
+  margin-bottom: 72px;
+  color: #888888;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.wrap .bodyBlock .ourHistoryBlock {
+  background-color: #f6f6f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .bodyBlock .ourHistoryBlock .text {
+  padding: 0 49px 0 27px;
+}
+
+.wrap .bodyBlock .ourHistoryBlock .text h3 {
+  font-size: 30px;
+  color: #000000;
+  font-weight: bolder;
+  margin-top: 171px;
+  margin-bottom: 71px;
+  position: relative;
+}
+
+.wrap .bodyBlock .ourHistoryBlock .text h3::before {
+  content: "";
+  border-top: 2px solid #2ac5f4;
+  width: 66px;
+  height: 30px;
+  position: absolute;
+  bottom: 39px;
+}
+
+.wrap .bodyBlock .ourHistoryBlock .text h4 {
+  font-size: 18px;
+  color: #333333;
+  font-weight: 400;
+  margin-bottom: 34px;
+  letter-spacing: 1.8px;
+  text-align: justify;
+}
+
+.wrap .bodyBlock .ourHistoryBlock .text p {
+  font-size: 18px;
+  color: #888888;
+  font-weight: 300;
+  margin-bottom: 59px;
+  text-align: justify;
+  line-height: 28px;
+}
+
+.wrap .bodyBlock .ourHistoryBlock .text button {
+  padding: 23px 58px 23px;
+  background-color: #2ac5f4;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: sans-serif;
+  border-radius: 5%;
+}
+
+.wrap .bodyBlock .ourHistoryBlock .text button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.wrap .bodyBlock .ourHistoryBlock img {
+  padding: 100px 41px 100px 0;
+}
+
+.wrap .bodyBlock .flipBuildTypeBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 18px;
+}
+
+.wrap .bodyBlock .flipBuildTypeBlock .item {
+  position: relative;
+  background-color: #272727;
+}
+
+.wrap .bodyBlock .flipBuildTypeBlock .item .text h3 {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  margin: auto;
+  font-size: 18px;
+  top: 172px;
+  letter-spacing: 2px;
+}
+
+.wrap .bodyBlock .flipBuildTypeBlock .item .img img {
+  width: 360px;
+  height: 358px;
+  opacity: .5;
+  vertical-align: top;
+}
+
+.wrap .bodyBlock .recentNewsBlock {
+  width: 100%;
+}
+
+.wrap .bodyBlock .recentNewsBlock .title h3 {
+  text-align: center;
+  padding: 152px 580px 57px;
+  font-size: 30px;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+.wrap .bodyBlock .recentNewsBlock .title h3::before {
+  content: "";
+  border-top: 2px solid #2ac5f4;
+  width: 66px;
+  height: 30px;
+  position: absolute;
+  top: 48%;
+  right: 53%;
+  left: 48%;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item {
+  margin: 0 15px;
+  width: 33.333333%;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item .a_img {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item .a_img img {
+  width: 100%;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item .text {
+  margin-top: 41px;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item .text .a_title {
+  font-size: 18px;
+  text-decoration: none;
+  color: #333333;
+  letter-spacing: 2px;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item .text .posted {
+  margin-top: 36px;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item .text .posted span {
+  color: #888888;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item .text .posted a {
+  text-decoration: none;
+  color: #2ac5f4;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item .text .posted .a_date {
+  margin-left: 5px;
+}
+
+.wrap .bodyBlock .recentNewsBlock .container .item .text p {
+  color: #888888;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 18px;
+  line-height: 29px;
+}
+
+.wrap .bodyBlock .recentNewsBlock .aButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 111px;
+  margin-bottom: 100px;
+}
+
+.wrap .bodyBlock .recentNewsBlock .aButton .a_button {
+  text-decoration: none;
+  padding: 23px 58px 23px;
+  background-color: #2ac5f4;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: sans-serif;
+  border-radius: 3%;
+}
+
+.wrap .bodyBlock .recentNewsBlock .aButton .a_button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.wrap footer .information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #333333;
+  padding: 131px 149px 120px 44px;
+}
+
+.wrap footer .information .promiseBlock {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 30px;
+}
+
+.wrap footer .information .promiseBlock p {
+  color: #888888;
+  font-weight: 300;
+  line-height: 29px;
+  padding-top: 10px;
+}
+
+.wrap footer .information .navigationBlock {
+  margin-left: 50px;
+  margin-right: 55px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.wrap footer .information .navigationBlock h3 {
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-top: 33px;
+  margin-bottom: 37px;
+}
+
+.wrap footer .information .navigationBlock li {
+  margin-bottom: 20px;
+}
+
+.wrap footer .information .navigationBlock li a {
+  text-decoration: none;
+  color: #2ac5f4;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.wrap footer .information .recentCommentsBlock {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 41px;
+  margin-right: 40px;
+}
+
+.wrap footer .information .recentCommentsBlock h3 {
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-top: 33px;
+  margin-bottom: 32px;
+}
+
+.wrap footer .information .recentCommentsBlock a {
+  margin-top: -6px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 29px;
+}
+
+.wrap footer .information .recentCommentsBlock a:hover {
+  color: #2ac5f4;
+}
+
+.wrap footer .information .recentCommentsBlock .futureProofingPosted, .wrap footer .information .recentCommentsBlock .performancePosted {
+  color: #888888;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.wrap footer .information .recentCommentsBlock .futureProofingPosted a, .wrap footer .information .recentCommentsBlock .performancePosted a {
+  color: #888888;
+}
+
+.wrap footer .information .recentCommentsBlock .futureProofingPosted a:hover, .wrap footer .information .recentCommentsBlock .performancePosted a:hover {
+  color: #2ac5f4;
+}
+
+.wrap footer .information .contactsBlock {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 16px;
+}
+
+.wrap footer .information .contactsBlock h3 {
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-top: 33px;
+  margin-bottom: 36px;
+}
+
+.wrap footer .information .contactsBlock ul li {
+  margin-bottom: 20px;
+  color: #888888;
+  font-weight: 300;
+}
+
+.wrap footer .information .contactsBlock ul li a {
+  color: #2ac5f4;
+  text-decoration: none;
+}
+
+.wrap footer .information .contactsBlock ul li a:hover {
+  color: #ffffff;
+}
+
+.wrap footer .footer_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 21px 53px;
+  background-color: #272727;
+}
+
+.wrap footer .footer_row .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap footer .footer_row .text p {
+  color: #888888;
+}
+
+.wrap footer .footer_row .text .a_Zemez {
+  text-decoration: none;
+  color: #398ffc;
+  margin-left: 6px;
+}
+
+.wrap footer .footer_row .icon a {
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.wrap footer .footer_row .icon a i {
+  color: #ffffff;
+}
+/*# sourceMappingURL=Manufax.css.map */

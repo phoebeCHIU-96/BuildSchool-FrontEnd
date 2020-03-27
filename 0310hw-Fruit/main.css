@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrap{
+    width: 100%;
+    /* background-color: #ffe605; */
+}
+.main{
+    display: flex;
+    /* width: 1000px;
+    height: 200px; */
+}
+.main .left{
+    width: 50%;
+}
+.main .left img{
+    width: 100%;
+}
+.main .middle{
+    padding: 20px;
+    width: 40%;
+    background-color: white
+}
+.main .middle h2{
+    font-size: 70px;
+    font-family: sans-serif;
+    font-weight: 320;
+}
+.main .middle h3{
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #ffe605;
+}
+.main .middle button{
+    margin: 40px 0;
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.main .right{
+    width: 10%;
+    background-color: antiquewhite;
+}
+.icon{
+    display: flex;
+    /* background-color: #ebe9d6; */
+}
+.icon .item{
+    width: 400px;
+    background-color: beige;
+    display: flex;
+    align-items: center;
+    /* vertical-align: baseline; */
+}
+.icon .item:hover span{
+    background-color: blue;
+    box-shadow: black;
+}
+.icon img{
+    /* margin: auto; */
+    width: 100%;
+    /* z-index: -1; */
+}
+.icon.item span.collection{
+    color:yellowgreen;
+}
+.icon a{
+    /* background-color: #ebe9d6; */
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+.icon span{
+    /* color: aqua; */
+    text-align: center;
+    /* margin: auto; */
+    /* bottom: 40px; */
+}
+.issuu{
+    background-color: antiquewhite;
+    display: flex;
+    margin: 80px 130px;
+}
+.issuu .text{
+    color: white;
+    background-color: black;
+}
+.issuu a{
+    color: white;
+}
+.issuu img{
+    margin: auto;
+    width: 100%;
+}
+.issuu h3{
+    /* text-align: center; */
+}
+.issuu .left{
+    /* background-color: rgb(216, 238, 238); */
+    width: 50%;
+    margin: 0 10px 0 0;
+    
+}
+.issuu .left .img{
+    /* position: relative; */
+}
+.issuu .left .text{
+    /* position: absolute; */
+}
+.issuu .right{
+    /* position: relative; */
+    margin: 0 0 0 10px;
+}
+.issuu .right img{
+    /* background-color: azure; */
+    width: 100%;
+    /* margin: 0 0 0 10px; */
+    /* position: relative; */
+}
+.issuu .right .text{
+    /* position: absolute; */
+    margin: auto;
+    top: 50px;
+    left: 30px;
+}
+.issuu .top{
+    background-color: rgb(243, 198, 217);
+    margin: 0 0 20px;
+}
+.issuu .bottom{
+    background-color: palevioletred;
+    margin: 20px 0 0;
+}
