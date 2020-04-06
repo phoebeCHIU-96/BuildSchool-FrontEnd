@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    </head>
+    <body>
+    <div class="container w-50">
+        <div class="calculator">
+            <div class="btn-toolbar d-block" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="row w-100">
+                    <input type="text" id="input" class="form-control " placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon2">
+                </div>
+                <div class="row ">
+                    <div class="btn-group mr-2 w-100" role="group" aria-label="First group">
+                        <button type="button" class="btn rounded border btn-dark w-75" id="reset">AC</button>
+                        <button type="button" class="btn rounded border btn-warning w-25 symbol" id="division" value="/" >÷</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btn-group mr-2 w-100" role="group" aria-label="First group">
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number w-25" id="one" value="1">1</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number w-25" id="two" value="2">2</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number w-25" id="three" value="3">3</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-warning w-25 symbol" id="multiplication" value="*">x</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btn-group mr-2 w-100" role="group" aria-label="First group">
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number  w-25" id="four" value="4">4</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number  w-25" id="five" value="5">5</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number  w-25" id="six" value="6">6</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-warning w-25 symbol" id="minus" value="-">-</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btn-group mr-2 w-100" role="group" aria-label="First group">
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number w-25" id="seven" value="7">7</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number w-25" id="eight" value="8">8</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number w-25" id="nine" value="9">9</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-warning w-25 symbol" id="plus" value="+" value="+">+</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btn-group mr-2 w-100" role="group" aria-label="First group">
+                        <button type="button" class="border rounded border-top-0 text-center pl-4 btn btn-secondary number w-50" id="zero" value="0">0</button>
+                        <button type="button" class="btn rounded border border-top-0 btn-secondary number w-25" id="dots" value=".">.</button>
+                        <button type="button" class="border rounded border-top-0 btn btn-warning w-25 symbol" id="equals" value="＝">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //數字
+        let number = document.getElementsByClassName('number');
+        // let btn = document.querySelectorAll('.btn');
+        let symbol = document.getElementsByClassName('symbol');
+        let input = document.getElementById('input');
+        for(let i=0 ; i<number.length ; i++){
+            number[i].addEventListener('click',function(){
+                input.value=''; //只要按完等於鍵後,再次點擊數字鍵,即會清除input.value
+                input.value += number[i].innerText;
+            });
+        }
+
+        //Btn Reset
+        let reset = document.getElementById('reset');
+        reset.addEventListener('click',function(){
+            input.value = '';
+            inputNumber =[];
+        });
+
+        let inputNumber=[];
+        var divisionAnswer;
+
+        //Btn division (÷)
+        let division = document.getElementById('division');
+        division.addEventListener('click',divisionArray);
+        //將除法連同數字推進陣列
+        function divisionArray(){
+            inputNumber.push(input.value);
+            inputNumber.push('/');
+            input.value = '';
+            console.log(inputNumber);
+        }
+
+        //Btn multiplication (x)
+        let multiplication = document.getElementById('multiplication');
+        multiplication.addEventListener('click',multiplicationArray);
+        //將乘法連同數字推進陣列
+        function multiplicationArray(){
+            inputNumber.push(input.value);
+            inputNumber.push('*');
+            input.value = '';
+            console.log(inputNumber);
+        }
+
+        //Btn plus (+)
+        let plus = document.getElementById('plus');
+        plus.addEventListener('click',plusArray);
+        //將乘法連同數字推進陣列
+        function plusArray(){
+            inputNumber.push(input.value);
+            inputNumber.push('+');
+            input.value = '';
+            console.log(inputNumber);
+        }
+
+        //Btn minus (-)
+        let minus = document.getElementById('minus');
+        minus.addEventListener('click',minusArray);
+        //將乘法連同數字推進陣列
+        function minusArray(){
+            inputNumber.push(input.value);
+            inputNumber.push('-');
+            input.value = '';
+            console.log(inputNumber);
+        }
+
+        //Btn equals (=)
+        let twice;
+        let value;
+        let equalsNumber;
+        let equals = document.getElementById('equals');
+        equals.addEventListener('click',function(){
+            inputNumber.push(input.value);
+            console.log(inputNumber);
+            equalsNumber = inputNumber.join(''); //將陣列中的","移除
+            if(eval(equalsNumber) != Infinity){
+                console.log(eval(equalsNumber)); 
+                input.value = eval(equalsNumber); // 利用eval(string)來計算字串
+                inputNumber = [];                
+            }
+            else{
+                console.log('can not divide by zero');
+                input.value = '不是數字';
+                inputNumber = '';
+            }
+        });
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>

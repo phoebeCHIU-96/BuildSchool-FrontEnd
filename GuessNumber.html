@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>終極密碼</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #randomNumber{
+            width: 200px;
+            display: flex;
+            justify-content: center;
+        }
+        label{
+            font-size: 50px;
+        }
+        button{
+            font-size: 20px;
+        }
+        input{
+            font-size: 30px;
+        }
+        .btnNumber,.btnClear,.btnCheck{
+            width: 50px;
+        }
+        h2{
+            font-size: 25px;
+        }
+
+    </style>
+    </head>
+    <body>
+    
+        <div class="container w-50">
+            <div class="row d-flex flex-column">
+                <h1 class="text-center pt-3 py-2">終極密碼</h1>
+                <div class="gameRules bg-light p-2 mb-3">
+                    <h2>遊戲規則</h2>
+                    <ol>
+                        <li>亂數產生一個終極數字（範圍1~100)</li>
+                        <li>使用者於範圍內猜選一數字</li>
+                        <li>每猜一數字， 會提示該數字是大於或小於密碼的範圍區間，直至密碼被猜中</li>
+                        <li>可利用“Ｖ”驗證數字與範圍區間</li>
+                        <li>可利用“Ｘ”重新輸入數字</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 ">
+                    <label for="" class="rounded text-center border border-dark py-4 w-100" id="label">0~100</label>
+                    <button class=" p-3 bg-primary text-white w-100" id="randomNumber" w-50>產生數字</button>
+                    <input  class=" p-2 text-center w-100" id="input" type="text">
+                </div>
+                <div class="col-md-6">
+                    <div class="number">
+                        <div class="row  justify-content-center">
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">1</button>
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">2</button>
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">3</button>
+                        </div>
+                        <div class="row justify-content-center">
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">4</button>
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">5</button>
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">6</button>
+                        </div>
+                        <div class="row  justify-content-center">
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">7</button>
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">8</button>
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">9</button>
+                        </div>
+                        <div class="row  justify-content-center">
+                                <button class="btnClear m-1 bg-dark text-white p-2 rounded text-success">X</button>
+                                <button class="btnNumber m-1 bg-dark text-white p-2 rounded">0</button>
+                                <button class="btnCheck m-1 bg-dark text-white p-2 rounded text-danger">V</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let showRandomNumber;
+            showRandomNumber = Math.floor(Math.random()*100);
+            //產生亂數
+            var btnRandom = document.getElementById('randomNumber');
+            
+
+            btnRandom.addEventListener('click',getNumber);
+
+            function getNumber(){
+                showRandomNumber = Math.floor(Math.random()*100);
+                alert(showRandomNumber);
+            }
+
+            //數字
+            var btnNumber = document.getElementsByClassName('btnNumber');
+            var input = document.getElementById('input');
+
+            for(let i=0 ; i<btnNumber.length ; i++){
+                btnNumber[i].addEventListener('click',function(){
+                    input.value += btnNumber[i].innerText;
+                });
+            }
+
+            // X btn
+            var btnClear = document.getElementsByClassName('btnClear')[0];
+
+            btnClear.addEventListener('click',clearNumber);
+            var input = document.getElementById('input');
+            function clearNumber(){
+                input.value = '';
+            }
+
+            // V btn
+            var btnCheck = document.getElementsByClassName('btnCheck')[0];
+            
+            btnCheck.addEventListener('click',check);
+            btnCheck.addEventListener('click',clearNumber);
+            var label = document.getElementById('label');
+
+            var min = 0;
+            var max =100;
+            function check(){
+                if(input.value == showRandomNumber){
+                    alert('DO~ RE~ MI~ SO~ 答對了~~');
+                    alert('答案就是：'+input.value+'哦～');
+                }
+                else{
+                    if(input.value < showRandomNumber && input.value < max && input.value > min){
+                        min = input.value;
+                    }
+                    else if(input.value > showRandomNumber && input.value < max && input.value > min){
+                        max = input.value;
+                    }
+                    else{
+                        alert('錯誤！錯誤！錯誤了啦');
+                        alert('這次可以好好猜嗎～')
+                    }
+                    label.innerHTML = min + '~' + max ;
+                }
+            }
+            
+
+
+
+        </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--<link rel="icon" href="../../favicon.ico">-->
+
+  <title>Guess number</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+
+  <!-- Custom styles for this template -->
+  <!-- <link href="stylesheets/dashboard.css" rel="stylesheet"> -->
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    .article {
+      margin-top: 50px;
+    }
+
+    h1 {
+      margin-bottom: 50px;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 main">
+        <div class="container-fluid">
+          <div class="row article">
+            <h1 class="text-center">Guess Number</h1>
+            <div class="col-md-12">
+              <div class="btn-group btn-group-justified">
+                <a id="start" type="button" class="btn btn-default">開始</a>
+                <a id="restart" type="button" class="btn btn-default">放棄重來</a>
+                <a id="cheat" type="button" class="btn btn-default">看答案</a>
+              </div>
+              <br>
+              <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon1">猜答案</span>
+                <input id="userGuess" type="text" name="" class="form-control" value="" required="required">
+                <span class="input-group-btn">
+                  <a id="guess" type="button" class="btn btn-default">猜!</a>
+                </span>
+              </div>
+              <ul id="guessResults" class="list-group">
+                <!-- <li class="list-group-item"> -->
+                  <!-- <span class="label label-danger">0A1B</span> -->
+                  <!--<span class="badge">0A1B</span>-->
+                  <!-- 1234 -->
+                <!-- </li> -->
+                <!-- <li class="list-group-item"> -->
+                  <!-- <span class="label label-danger">0A3B</span> -->
+                  <!--<span class="badge">0A3B</span>-->
+                  <!-- 3456 -->
+                <!-- </li> -->
+                <!-- <li class="list-group-item"> -->
+                  <!-- <span class="label label-danger">0A2B</span> -->
+                  <!--<span class="badge">0A2B</span>-->
+                  <!-- 4567 -->
+                <!-- </li> -->
+                <!-- <li class="list-group-item"> -->
+                  <!-- <span class="label label-danger">2A0B</span> -->
+                  <!--<span class="badge">2A0B</span>-->
+                  <!-- 6089 -->
+                <!-- </li> -->
+                <!-- <li class="list-group-item"> -->
+                  <!-- <span class="label label-danger">3A0B</span> -->
+                  <!--<span class="badge">3A0B</span>-->
+                  <!-- 6345 -->
+                <!-- </li> -->
+                <!-- <li class="list-group-item"> -->
+                  <!-- <span class="label label-success">4A0B</span> -->
+                  <!--<span class="badge badge-success">4A0B</span>-->
+                  <!-- 6385 -->
+                <!-- </li> -->
+              <!-- </ul> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //開始btn 產生亂數
+    let start = document.getElementById('start');
+    start.addEventListener('click', randomClear);//清除亂數
+    start.addEventListener('click', randomappear);//產生四個字的亂數
+    var randomNumber ;
+    var randomCheck;
+    //清除亂數
+    function randomClear() {
+      randomNumber = '';
+    }
+
+    //產生四個字的亂數
+    //判斷 亂數字元是否重複
+    function randomappear(){
+      function randomCheckSame(){
+        let randomNumber = Math.floor(Math.random() * 10000);
+        // randomCheckSame = ['0','3','1','2']; //將數字轉型成字串，才可以被split
+        randomCheck = randomNumber.toString().split(""); //將數字轉型成字串，才可以被split
+        if(randomCheck.length != 4){
+          randomNumber = Math.floor(Math.random() * 10000);
+        }
+        else{
+          let repeat=0;
+        let noRepeat=0;
+        for (let i = 0; i < randomCheck.length; i++) {
+          for (let j =i+1 ; j < randomCheck.length; j++) {
+            if (randomCheck[i] == randomCheck[j]) {
+              repeat=repeat+1;
+            }
+            else {
+              noRepeat = noRepeat+1;
+              console.log(randomCheck);
+            }
+          }
+        }
+        return noRepeat;
+      };
+        }
+
+      let noRepeat = randomCheckSame();
+      while(noRepeat!=6){
+        noRepeat =  randomCheckSame();
+      }
+    }
+
+    //放棄重來btn 清除
+    let restart = document.getElementById('restart');
+    restart.addEventListener('click', clearPlusGiveUp);
+    restart.addEventListener('click', randomClear); //清除亂數
+    restart.addEventListener('click', randomappear); //產生四個字的亂數
+    let userGuess = document.getElementById('userGuess');
+
+    function clearPlusGiveUp() {
+      alert('答案為：'+numberArray);
+      alert('放棄重來吧～');
+      userGuess.value = '';
+      var inputGroup = document.getElementsByClassName('input-group');
+      var inputli = document.getElementById('guessResults');
+      inputli.innerHTML = "";//删除ul的内容（删除所有li）
+    }
+
+
+    //看答案btn 顯示亂數
+    let cheat = document.getElementById('cheat');
+    cheat.addEventListener('click', cheatRandom);
+
+    function cheatRandom() {
+      alert('答案為：'+numberArray);
+    }
+ 
+    //猜按鈕
+    let guess = document.getElementById('guess');
+    guess.addEventListener('click',comparingFourNumber); //判斷是否輸入四個數字
+    guess.addEventListener('click',comparingAB); //猜後判斷A/B (//把亂數陣列存成數字 //比較輸入的數字與亂數)
+    guess.addEventListener('click',comparingABColor); //猜後 使用者輸入數字加入ul裡 //判斷AB顏色
+    
+    //清空輸入框
+    function clear(){ 
+      userGuess.value = '';
+    }
+
+    //猜對顯示遊戲結束
+    function alertGameOver(){
+      alert('很棒~很棒~~猜對囉!');
+      alert('答案就是:'+randomCheck);
+    }
+
+    //判斷是否輸入四個數字
+    function comparingFourNumber(){
+      if(userGuess.value.length != 4){
+        alert('請輸入四個不一樣的數字');
+        userGuess.value='';
+      }
+      for(let i=0 ; i<userGuess.value.length ; i++){
+        for(let j=i+1 ; j<userGuess.value.length ; j++){
+          if(userGuess.value[i] == userGuess.value[j]){
+            alert('數字重複囉~');
+            alert('請輸入四個不一樣的數字');
+            userGuess.value='';
+          }
+        }
+      }
+    }
+    
+    
+    let numberArray='';
+    let a=0;
+    let b=0;
+    let showAB;
+    //判斷A/B
+    function comparingAB(){
+      //把亂數陣列存成數字
+      numberArray='';//每次一進入function裡numberArray就歸零
+      let a=0; //每次一進入function裡a / b就歸零
+      let b=0;
+      
+      for(var i of randomCheck){
+          numberArray += i; 
+      }
+      //比較輸入的數字與亂數
+      // function comparingABNumber(){
+        console.log('有進入function');
+        for(let k=0 ; k<4 ; k++){
+          for(let j=0 ; j<4 ; j++){
+            console.log('這是使用者輸入的第'+k+'個數字:'+userGuess.value[k]);
+            console.log('這是亂數的第'+j+'個數字:'+numberArray[j]);
+            if(userGuess.value[k] == numberArray[j]){
+              if(k ==j){
+                a=a+1;
+                console.log('找到數字位置皆相同的數字:'+a+'次');
+              }
+              else{
+                b=b+1;
+                console.log('找到只有相同的數字:'+b+'次');
+              }
+            }
+          }
+        }
+        alert(a+'A'+b+'B');
+        showAB=a+'A'+b+'B';
+      }
+
+      //判斷A/B顏色
+      function comparingABColor(){
+        if(showAB=='4A0B'){
+          //新增DOM //猜對(綠色)
+              var ul = document.getElementById('guessResults');
+              var li = document.createElement('li');
+              var span = document.createElement('span');
+              li.innerHTML = userGuess.value;
+              span.innerHTML = '4A0B';
+              ul.appendChild(li);
+              li.appendChild(span);
+
+              ul.setAttribute("style","list-style:none");
+              li.setAttribute("style","border:1px solid gainsboro;padding:10px 20px;");
+              span.setAttribute("style","color:#ffffff;background-color:#66dd55;height:100px;padding:3px 5px;font-size:12px;font-weight:600;border-radius:3px");
+              alert('很棒~很棒~~猜對囉!');
+              alert('答案就是:'+showAB);
+        }
+        else{
+          //新增DOM//猜錯(紅色)
+              var ul = document.getElementById('guessResults');
+              var li = document.createElement('li');
+              var span = document.createElement('span');
+              li.innerHTML = userGuess.value;
+              span.innerHTML = showAB;
+              ul.appendChild(li);
+              li.appendChild(span);
+
+              ul.setAttribute("style","list-style:none");
+              li.setAttribute("style","border:1px solid gainsboro;padding:10px 20px;");
+              span.setAttribute("style","color:#ffffff;background-color:#ff2211;height:100px;padding:3px 5px;font-size:12px;font-weight:600;border-radius:3px");
+              userGuess.value = '';
+        }
+      }   
+ 
+ </script>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+  <!-- <script src="scripts/bootstrap.min.js"></script> -->
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <!--<script src="../../assets/js/vendor/holder.min.js"></script>-->
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+
+</body>
+
+</html>
