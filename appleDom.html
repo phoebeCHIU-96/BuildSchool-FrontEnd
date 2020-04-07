@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Apple Store</title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="navbar navbar-light bg-dark">
+        <form class="form-inline">
+          <i class="fab fa-apple"></i>
+          <button class="btn border-0 btn-dark text-white mx-1 bg-transparent" type="button">iPhone</button>
+          <button class="btn border-0 btn-dark text-white mx-1 bg-transparent" type="button">iPad</button>
+        </form>
+      </nav>
+
+      <div class="main">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                  <div class="imgIphone">
+                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-select-2019-family?wid=500&amp;hei=500&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1567022175704" alt="iPhoneAll">
+                  </div>
+                </div>
+                <div class="col-12 col-xl-6 mt-5">
+                  <div class="row my-5">
+                    <h3 class="m-auto font-weight-bold">購買 iPhone</h3>
+                  </div>
+                  <div class="row">
+                    <div class="color ">
+                      <h4 class="ml-3">外觀</h4>
+                      <div class="col-4 d-flex mb-4 m-auto">
+                        <button id='iphoneWhite' class="btnIphoneColor border-0 bg-transparent mx-1" >white</button>
+                        <button id='iphoneBlack' class="btnIphoneColor border-0 py-3 px-5 bg-transparent mx-1" >black</button>
+                      </div>
+                    </div>
+                    <div class="type"></div>
+                  </div>
+                  <div class="row">
+                    <div class="type">
+                      <h4 class="ml-3 Capacity">規格</h4>
+                      <div class="col-4 d-flex mb-4 m-auto">
+                        <button id="type64GB" class="btnCapacity border border-dark py-3 px-5 bg-transparent mx-1">
+                          <span>64GB</span>
+                          <span id="type64GBPrice">NT$24,900</span>
+                        </button>
+                        <button id="type128GB" class="btnCapacity border border-dark py-3 px-5 bg-transparent mx-1">
+                          <span>128GB</span>
+                          <span id="type128GBPrice">NT$26,900</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="type priceCapacity">
+                      <h4 id="Price" class="ml-3 showPrice">價格試算</h4>
+                      <span class=""></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      //我是iphone
+      //.............................iphone外觀們.............................
+      var btnIphoneColor = document.querySelectorAll('.btnIphoneColor');
+      //取出btnIphoneColor裡所有的內容
+      for(let i=0 ; i<btnIphoneColor.length ; i++){ 
+        btnIphoneColor[i].addEventListener('click',iphoneChangeColor);
+      }
+      //.....iphone's Color function.....
+      //改變圖片顏色
+      function iphoneChangeColor(){
+        let img = document.querySelector('.imgIphone img');
+        img.setAttribute('src',getIphoneColor(this.innerHTML));
+      }
+      //取得符合選取值的內容
+      function getIphoneColor(key){
+        let result;
+        appleProducts.productsName.iphone.colors.forEach((item)=>{
+          if (item.color == key)
+          result = item.url;
+        });
+        return result;
+      }
+      //.............................iphone規格們.............................
+      var btnCapacity = document.querySelectorAll('.btnCapacity');
+      //取出btnCapacity裡所有的內容
+      for(let j=0; j<btnCapacity.length ; j++){
+        btnCapacity[j].addEventListener('click',iphoneChangePrice);
+      }
+      //.....iphone's Capacity function.....
+      //改變價格
+      function iphoneChangePrice(){
+        let span = document.querySelector('.priceCapacity h4');
+        span.innerHTML = getIphoneCapacity(this.innerHTML);
+        console.log(span);
+      }
+      ///取得符合選取值的內容
+      function getIphoneCapacity(key){
+        let result;
+        console.log(result);
+        appleProducts.productsName.iphone.Capacity.forEach((item)=>{
+          if(item.price == key)
+          result = item.price;
+        });
+        return result;
+      }
+
+
+
+
+      //資料結構
+      var appleProducts = {
+        productsName:{
+          iphone:{
+            colors:[
+              {color:'white',url:'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQiFp7V2Hhb0paDOmQKXKrpfBopoqR_Uk0MBC8sAjFaKPPWdII-q6xjtzNk7oziST6BZrC4cQkzG8p72pnJobAfcrttRDo1sjbr4vJ5F9hwyvrbpv0YbT86GA&usqp=CAE'},
+              {color:'black',url:'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTGmyXvaONAvYrONhWYZ4EMrataDwYt_MwOnI1fZZSj_rve1XxhZSddZmngygLYuYjDTuR3-Ub37woQPp3yu73i5bPjAVEahZ-Qso9EHmL6t-XVF-NPRXWR&usqp=CAE'},
+            ],
+            Capacity:[
+              {
+                price:'NT$24,900',storage:'64GB'
+              },
+              {
+                price:'NT$26,900',storage:'128GB'
+              }
+            ]
+          }
+        }
+      }
+
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
