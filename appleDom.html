@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-12 col-xl-6 mt-5">
                   <div class="row my-5">
-                    <h3 class="m-auto font-weight-bold">購買 iPhone</h3>
+                    <h3 class="m-auto font-weight-bold buyTitle">購買 iPhone</h3>
                   </div>
                   <div class="row">
                     <div class="color ">
@@ -47,18 +47,17 @@
                         <button id='iphoneBlack' class="btnIphoneColor border-0 py-3 px-5 bg-transparent mx-1" >black</button>
                       </div>
                     </div>
-                    <div class="type"></div>
                   </div>
                   <div class="row">
                     <div class="type">
                       <h4 class="ml-3 Capacity">規格</h4>
                       <div class="col-4 d-flex mb-4 m-auto">
-                        <button id="type64GB" class="btnCapacity border border-dark py-3 px-5 bg-transparent mx-1">
-                          <span>64GB</span>
+                        <button id="type64GB" class="btnCapacity border border-dark py-3 px-5 bg-transparent mx-1" value="NT$24,900">
+                          <span id="typeCapacity">64GB</span>
                           <span id="type64GBPrice">NT$24,900</span>
                         </button>
-                        <button id="type128GB" class="btnCapacity border border-dark py-3 px-5 bg-transparent mx-1">
-                          <span>128GB</span>
+                        <button id="type128GB" class="btnCapacity border border-dark py-3 px-5 bg-transparent mx-1" value="NT$26,900">
+                          <span id="typeCapacity">128GB</span>
                           <span id="type128GBPrice">NT$26,900</span>
                         </button>
                       </div>
@@ -105,20 +104,27 @@
         btnCapacity[j].addEventListener('click',iphoneChangePrice);
       }
       //.....iphone's Capacity function.....
+      
+
       //改變價格
       function iphoneChangePrice(){
         let span = document.querySelector('.priceCapacity h4');
-        span.innerHTML = getIphoneCapacity(this.innerHTML);
         console.log(span);
+        span.innerHTML = getIphoneCapacity(this.value);
+        console.log(span);
+        
       }
       ///取得符合選取值的內容
       function getIphoneCapacity(key){
         let result;
-        console.log(result);
+        
+        
         appleProducts.productsName.iphone.Capacity.forEach((item)=>{
           if(item.price == key)
           result = item.price;
         });
+        console.log(result);
+
         return result;
       }
 
