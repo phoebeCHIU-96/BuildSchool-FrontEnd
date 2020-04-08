@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/a64a058eb0.js" crossorigin="anonymous"></script>
+
+    <title>Apple's Table</title>
+    <style>
+        thead tr th:nth-child(n+1):nth-child(-n+3):hover {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="text-uppercase font-weight-bold text-center p-5">apple  ipad</h1>
+    <div id="msg"></div>
+    <script>
+        let body = document.getElementsByTagName('body')[0];
+        let table = document.createElement('table');
+        let thead = document.createElement('thead');
+        let tbody = document.createElement('tbody');
+        let tr = document.createElement('tr');
+        let msg = document.getElementById('msg');
+
+        table.classList.add('table-bordered', 'table','text-center',); //利用classList.add加入classname('class')
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        body.appendChild(table);
+        let title;
+
+        //增加Thead內容的方法
+        function addThead(titles) {
+            for (let item in titles) { //迭代物件for...in  //取得key值
+                let th = document.createElement('th');
+                th.setAttribute('scope', 'col'); //利用setAttribute設定屬性與值 //（‘屬性’,'值'）
+                th.innerText = titles[item];
+                tr.appendChild(th);
+            }
+            thead.appendChild(tr);
+            thead.classList.add('text-uppercase');
+            // debugger
+            title = document.querySelectorAll('thead tr th:nth-child(n+1):nth-child(-n+3)');
+            for (let j = 0; j < title.length; j++) {
+                title[j].innerHTML += '<i class="fas fa-sort"></i>';
+            }
+        }
+        //增加Tbody內容的方法
+        function addTbody(rowArray) {
+            for (let i = 0; i < rowArray.length; i++) { //跑rowArray(ipads)裡所有的物件(共有12個物件)
+                let bodytr = document.createElement('tr');
+                for (let item in rowArray[i]) { //跑rowArray的第i個物件裡的所有key(共有5個)
+                    let td = document.createElement('td');
+                    td.innerText = rowArray[i][item]; //取得rowArray的第i個物件裡的item(每一個)
+                    bodytr.appendChild(td);
+                }
+                tbody.appendChild(bodytr);
+            }
+            tbody.classList.add('table','table-dark');
+        }
+        //Thead點擊事件
+        function whenClick(clickItem) {
+            let clickCatch;
+            let isDesc = false; //要不要倒序？ 不要
+
+            clickItem.forEach((e) => {
+                e.addEventListener('click', catchClick);
+                e.addEventListener('click', clearTrTd);
+                e.addEventListener('click', function () {
+                    if(isDesc == false)  //不要倒序 
+                    {
+                        addTbody(arragement()); //正序
+                    }
+                    else if(isDesc == true) //要倒序 
+                    {
+                        addTbody(descending()); //倒序
+                    }
+
+                    if(isDesc == true) //倒序 
+                    {
+                        isDesc = false; //isDesc要變成正序
+                    }
+                    else if(isDesc == false) //正序 
+                    {
+                        isDesc = true; //isDesc要變成倒序
+                    }
+                });
+            })
+
+            //抓到被點擊的這個人
+            function catchClick() {
+                clickCatch = this.innerText;
+                console.log(clickCatch);
+            }
+            //升冪 
+            function arragement() {
+                let arragement = ipad.products.sort(function (a, b) {
+                    return a[clickCatch] - b[clickCatch];
+                });
+
+                console.log(arragement);
+                return arragement;
+            }
+            //降冪
+            function descending() {
+                let descendingArray = ipad.products.sort(function (a, b) {
+                    return b[clickCatch] - a[clickCatch];
+                });
+                console.log(descendingArray);
+
+                return descendingArray;
+            }
+            //清除tr＆td
+            function clearTrTd() {
+                var needToClear = document.querySelectorAll('tbody tr');
+                for (var i = 0; i < needToClear.length; i++) {
+                    needToClear[i].remove();
+                }
+                console.log('......');
+            }
+        }
+
+        let ipad = '';
+        var xhr;
+        window.onload = function () {
+
+            xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                //document.getElementById('msg').innerHTML = this.responseText;
+                // msg.textContent = this.responseText;
+                ipad = JSON.parse(this.responseText);
+                console.log(ipad);
+                const Array = Object.keys(ipad.products[0]);
+                addThead(Array); //執行方法（帶入參數）
+                addTbody(ipad.products); //執行方法（帶入參數）
+                console.log(ipad.products);
+                whenClick(title); //當被點擊後的監聽
+            }
+            xhr.open("Get", "https://bs-frontend.azurewebsites.net/api/Apple/IPad");
+            xhr.send();
+            // addThead(ipads[0]); //執行方法（帶入參數）
+            // addTbody(ipads); //執行方法（帶入參數）
+        }
+    </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
