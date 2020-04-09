@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="../TaiwanAddress/TaiwanAddress.json"></script>
+    <script src="./MyHelpers.js"></script>
+
+    <title>Taiwan Address</title>
+    <style>
+        body{
+            background-color: #cfcfca;
+        }
+        h1{
+
+            letter-spacing:5px;
+        }
+        table{
+            margin: auto;
+        }
+        td{
+            padding: 10px 150px;
+        }
+    </style>
+    </head>
+    <body>
+    <h1 class="text-center text-uppercase p-5 font-weight-bold">Taiwan Address</h1>
+    <table class="table-striped border">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+    <template id="templateRow">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+
+    <script>
+        let zipcodeArray = '';
+        let tbody = $g('tbody');
+        tbody.classList.add('table-light');
+        //取得樣板的方法
+        function addTable(rowArray){
+            // let tds;
+            //選取模板
+            let  templateRow = $g('#templateRow');
+            rowArray.forEach((item) => { //forEach每一個縣市
+                console.log(item);
+            // debugger
+            item.Districts.forEach((zip)=> {
+                    //複製模板節點
+                    let cloneContent = templateRow.content.cloneNode(true);
+                    let tds = cloneContent.querySelectorAll('td');
+                    // debugger
+                    tds[0].textContent = item.City;
+                    tds[1].textContent = zip.Districts;
+                    tds[2].textContent = zip.ZipCode;
+                    // debugger
+                    //將複製的節點加入DOM
+                    tbody.appendChild(cloneContent);
+                })
+            })
+        }
+
+        window.onload = function(){
+            let xhr;
+            xhr = new XMLHttpRequest(); //幫助從網路上要求並會從伺服器端給予回應
+            xhr.onload = function () {
+                //判斷檔案連結是否存在的判斷
+
+                if(xhr.readyState==4 && xhr.status==200){
+                    //load JSON
+                    // console.log('hi');
+                    zipcodeArray = JSON.parse(this.responseText); //將檔案裡傳進來的字串轉成JSON指派給ipad
+
+                    let zipCode =[];
+                    // debugger
+                    // console.log(zipCode);
+                    zipcodeArray.forEach((item)=>{
+                        let _city = item.CityName;
+                        let _districts =[];
+
+                        // console.log(item.CityName)
+                        item.AreaList.forEach((e)=>{
+                            _districts.push({Districts:e.AreaName,ZipCode:e.ZipCode});
+                        });
+                        
+                        zipCode.push({City:_city,Districts:_districts});
+                    });
+                    addTable(zipCode);
+                }
+                else{
+                    msg.textContent ='發生錯誤，HTTP response代碼：' + xhr.status;
+                }
+                // debugger
+            }
+            //用“Get”的這個方法從網路拿東西回來
+            xhr.open("Get", "http://127.0.0.1:5501/AjaxExamplesLite/Examples/TaiwanAddress/TaiwanAddress.json");
+            //丟出去
+            xhr.send();
+        }
+
+        //規劃畫面要長什麼樣子 body > table > (我要的資料)
+        //table > thead / tbody > tr > th > td
+        //找到節點 document.getElementByTagName('body')[0]
+        //Create document.createElement();
+        // debugger
+        // addTable(zipCode);
+                    
+        //step1: 準備資料(自定義資料>從網路來)
+        //step2: 整理資料(需要的資料與格式)
+        //step3: 把資料呈現在畫面上(也就是呈現在document上面)
+        //step4: 賦予畫面上的元件上的各種功能(也就是說click事件要做什麼 或是 input框輸入後要做什麼 或是 按了Enter後要做什麼)
+        //step5: 把畫面美化
+
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
