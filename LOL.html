@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Six+Caps&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <title>Leagueoflegends - Champions</title>
+    <style>
+        body{
+            background-color: rgb(21, 2, 43);
+        }
+        .card{
+            /* background: transparent; */
+            background: rgb(30, 5, 54);
+        }
+        .card:hover{
+            cursor: pointer;
+            background-color: rgba(155, 106, 235, 0.4);
+            transition: 1s;
+            color: azure;
+        }
+        .card:hover .card-body h5{
+            color: azure;
+        }
+        .card:hover .card-body span{
+            color: rgb(236, 199, 96);
+            font-weight: 500;
+        }
+        .card-img-top:hover{
+            filter: grayscale(100%);
+            transition: 1s;
+            color: azure;
+        }
+        .card-body h5{
+            /* color: aliceblue; */
+            color: rgb(130, 93, 233);
+        }
+        .card-body span{
+            color: rgb(193, 197, 197);
+            font-weight: 300;
+        }
+        .card-body:hover .card-img-top{
+            filter: grayscale(100%);
+            transition: 1s;
+        }
+        .row{
+            border: 1px solid rgb(52, 13, 97);
+        }
+        h2{
+            /* font-family: 'Work Sans', sans-serif; */
+            font-family: 'Six Caps', sans-serif;
+            font-size: 100px;
+            letter-spacing: 8px;
+        }
+        h4{
+            /* font-family: 'Work Sans', sans-serif; */
+            color: rgb(178, 182, 185);
+            font-weight: 300;
+            font-size: 20px;
+            margin-bottom: 0;
+            letter-spacing: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h4 class="text-center pt-5 text-uppercase">Choose your</h4>
+    <h2 class="text-center text-uppercase text-light">champion</h2>
+    <div class="container p-5 ">
+        <div class="row">
+        </div>
+    </div>
+
+    <!-- 卡片 (Card) -->
+    <template id="templateCard">
+        <div class="col-12 col-md-4 col-lg-3 px-0">
+            <div class="card border-0 pb-5  m-1">
+                <button class="btn btn-link p-0 border-0 text-decoration-none " type="button" data-toggle="modal" data-target="#exampleModal">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title "></h5>
+                        <span class="point font-italic "></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <!-- 互動視窗 (Modal) -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        let row = document.getElementsByClassName('row')[0];
+        let card = document.getElementsByClassName('card')[0];
+        let cardBody = document.getElementsByClassName('card-body')[0];
+        let modalHeader = document.getElementsByClassName('modal-header')[0];
+        // 取得樣板的方法
+        function addCard(tempCard) {
+            // 選取模板
+            let templateCard = document.getElementById('templateCard');
+            tempCard.forEach(e => { //forEach每一個角色
+                //複製模板節點
+                let cloneContent = templateCard.content.cloneNode(true);
+                let h5 = cloneContent.querySelector('h5');
+                let span = cloneContent.querySelector('span');
+                let a = cloneContent.querySelector('a');
+                let img = cloneContent.querySelector('img');
+                let button = cloneContent.querySelector('button');
+                // let modalTitle = document.getElementsByClassName('modal-title')[0];
+
+                h5.textContent = e.name;
+                span.textContent = e.powerPoint;
+                img.setAttribute('src', e.img);
+                // modalText();
+                // modalTitle.textContent = e.information;
+                
+                //將複製的節點加入DOM
+                row.appendChild(cloneContent);
+
+                button.addEventListener('click', function(){
+                    let modalTitle = document.getElementsByClassName('modal-title')[0];
+                    let modalBody = document.getElementsByClassName('modal-body')[0];
+                    modalTitle.textContent = e.name;
+                    modalBody.innerHTML = e.information;
+                } );
+            });
+        }
+        // modal內容替換
+        // function modalText(){
+        //     let modalTitle = document.getElementsByClassName('modal-title')[0];
+        //     lolArray.forEach(item => {
+        //         modalTitle.textContent = item.information;
+        //     } );
+        // }
+
+
+
+
+        let lolData = '';
+        let lolArray = [];
+        $.ajax({
+            type: "GET",
+            url: "https://spreadsheets.google.com/feeds/list/1Q9q8rlrhVXv00yhajf8aBrY8dlnuYE180uSIbywxcPs/od6/public/values?alt=json",
+            success: function (response) {
+                lolData = response;
+                console.log(lolData);
+                lolData.feed.entry.forEach(item => {
+                    lolArray.push({
+                        name: item.gsx$name.$t,
+                        img: item.gsx$img.$t,
+                        powerPoint: ` 權力點 ${item.gsx$price.$t}`,
+                        id: item.gsx$id.$t,
+                        url: item.gsx$url.$t,
+                        information: item.gsx$information.$t
+                    });
+                });
+                addCard(lolArray);
+
+            }
+        });
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
