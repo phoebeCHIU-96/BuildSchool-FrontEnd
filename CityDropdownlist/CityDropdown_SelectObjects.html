@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="../MyHelpers.js"></script>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <h1>Hello, world!</h1>
+
+    <select name="cities" id="cities">
+        <option value="">---請選擇縣市---</option>
+        <option value="taipei">台北</option>
+        <option value="taoyuan">桃園</option>
+        <option value="taichung">台中</option>
+    </select>
+
+    <select name="cities" id="cities">
+        <option value="">---請選擇行政區---</option>
+        <option value="taipei01">中正區</option>
+        <option value="taipei02">萬華區</option>
+        <option value="taipei03">信義區</option>
+    </select>
+
+
+    <script>
+        function fetchTaiwanAddress(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    // $g('body').innerHTML = text;
+                    console.log(typeof data);
+                    console.log(data);
+                })
+                .catch(ex => {
+                    $g('body').innerHTML = ex;
+                })
+        }
+        window.onload = fetchTaiwanAddress('http://127.0.0.1:5501/TaiwanAddress_Simple.json')
+        // var Getdata = '';
+        // function FetchJSON(url) {
+        //     fetch('http://127.0.0.1:5501/TaiwanAddress_Simple.json')
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             Getdata = data;
+        //         })
+        // }
+        // window.onload = FetchJSON('https://raw.githubusercontent.com/hsulei03/BS_homework/master/data/Address.json')
+
+
+
+
+
+
+        // window.onload = fetchTaiwanAddress()
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
