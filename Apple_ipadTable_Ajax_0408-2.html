@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <h1 class="text-uppercase font-weight-bold text-center p-5">apple  ipad</h1>
+    <h1 class=" font-weight-bold text-center p-5">apple  ipad</h1>
     <div id="msg"></div>
     <script>
         let body = document.getElementsByTagName('body')[0];
@@ -46,7 +46,6 @@
                 tr.appendChild(th);
             }
             thead.appendChild(tr);
-            thead.classList.add('text-uppercase');
             // debugger
             title = document.querySelectorAll('thead tr th:nth-child(n+1):nth-child(-n+3)');
             for (let j = 0; j < title.length; j++) {
@@ -55,6 +54,8 @@
         }
         //增加Tbody內容的方法
         function addTbody(rowArray) {
+            // debugger;
+
             for (let i = 0; i < rowArray.length; i++) { //跑rowArray(ipads)裡所有的物件(共有12個物件)
                 let bodytr = document.createElement('tr');
                 for (let item in rowArray[i]) { //跑rowArray的第i個物件裡的所有key(共有5個)
@@ -68,20 +69,29 @@
         }
         //Thead點擊事件
         function whenClick(clickItem) {
-            let clickCatch;
+            var clickCatch;
             let isDesc = false; //要不要倒序？ 不要
 
             clickItem.forEach((e) => {
-                e.addEventListener('click', catchClick);
-                e.addEventListener('click', clearTrTd);
-                e.addEventListener('click', function () {
-                    if(isDesc == false)  //不要倒序 
+                e.addEventListener('click',function(){
+                     //抓到被點擊的這個人
+                    clickCatch = this.innerText;
+                    //清除tr＆td
+                    var needToClear = document.querySelector('tbody');
+                    needToClear.innerHTML='';
+                    judgeDesc(clickCatch);
+                });
+            })
+
+            //點擊被抓到的這個人後的正序＆倒序判斷
+            function judgeDesc(str) {
+                if(isDesc == false)  //不要倒序 
                     {
-                        addTbody(arragement()); //正序
+                        addTbody(arragement(str)); //正序
                     }
                     else if(isDesc == true) //要倒序 
                     {
-                        addTbody(descending()); //倒序
+                        addTbody(descending(str)); //倒序
                     }
 
                     if(isDesc == true) //倒序 
@@ -92,39 +102,25 @@
                     {
                         isDesc = true; //isDesc要變成倒序
                     }
-                });
-            })
-
-            //抓到被點擊的這個人
-            function catchClick() {
-                clickCatch = this.innerText;
-                console.log(clickCatch);
             }
+            
             //升冪 
-            function arragement() {
-                let arragement = ipad.products.sort(function (a, b) {
-                    return a[clickCatch] - b[clickCatch];
+            function arragement(str) {
+                let arragementArray = ipad.products.sort(function (a, b) {
+                    if(a[str]>b[str]) return 1;
+                    if(a[str]<b[str]) return -1;
+                    return 0;
                 });
-
-                console.log(arragement);
-                return arragement;
+                return arragementArray;
             }
             //降冪
-            function descending() {
-                let descendingArray = ipad.products.sort(function (a, b) {
-                    return b[clickCatch] - a[clickCatch];
+            function descending(str) {
+                let descendingArray = ipad.products.sort(function(a,b){
+                    if(a[str]>b[str]) return -1;
+                    if(a[str]<b[str]) return 1;
+                    return 0;
                 });
-                console.log(descendingArray);
-
                 return descendingArray;
-            }
-            //清除tr＆td
-            function clearTrTd() {
-                var needToClear = document.querySelectorAll('tbody tr');
-                for (var i = 0; i < needToClear.length; i++) {
-                    needToClear[i].remove();
-                }
-                console.log('......');
             }
         }
 
@@ -134,10 +130,16 @@
 
             xhr = new XMLHttpRequest();
             xhr.onload = function () {
+                //用來判斷檔案連結是否存在
+                // if(xhr.readyState==4 && xhr.statusText=="OK"){
+                //     msg.textContent = this.responseText;
+                // }else{
+                //     msg.textContent ='發生錯誤，HTTP response代碼：' + xhr.status;
+                // }
+
                 //document.getElementById('msg').innerHTML = this.responseText;
-                // msg.textContent = this.responseText;
-                ipad = JSON.parse(this.responseText);
-                console.log(ipad);
+                // msg.textContent = this.responseText; //將傳進來的檔案裡的文字指派給msg的文字 // 等於將資料結構傳進來,供我們尋找與使用
+                ipad = JSON.parse(this.responseText); //將傳進來的檔案裡的文字轉成JSON指派給ipad
                 const Array = Object.keys(ipad.products[0]);
                 addThead(Array); //執行方法（帶入參數）
                 addTbody(ipad.products); //執行方法（帶入參數）
@@ -146,8 +148,6 @@
             }
             xhr.open("Get", "https://bs-frontend.azurewebsites.net/api/Apple/IPad");
             xhr.send();
-            // addThead(ipads[0]); //執行方法（帶入參數）
-            // addTbody(ipads); //執行方法（帶入參數）
         }
     </script>
 
