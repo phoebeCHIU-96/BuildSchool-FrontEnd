@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../scss/Calender.css">
+    <link rel="stylesheet" href="../reset.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a64a058eb0.js" crossorigin="anonymous"></script>
+
+    <title>Calender</title>
+</head>
+
+<body>
+    <div class="calender">
+        <div class="title">
+            <h2 id="calenderYear">Year</h2>
+        </div>
+        <div class="body">
+            <div class="bodyTitle">
+                <div class="monthlist">
+                    <button id="prevMonth"><i class="fas fa-angle-left"></i></button>
+                    <h1 id="calenderMonth">Month</h1>
+                    <button id="nextMonth"><i class="fas fa-angle-right"></i></button>
+                </div>
+            </div>
+            <table>
+                <thead class="weekly">
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody class="days">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 顯示當天的行程表 modal -->
+    <div class="modal fade" id="todaysSchedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">MY SCHEDULE</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" id="iconTodaysClose">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="showModalBody">
+                    <div class="form-group d-flex justify-content-around">
+                        <h3 id="showTitle" class="my-2" w-50 style="font-size: 35px; font-weight: 700;">title</h3>
+                        <p id="showInfo" class="my-3" w-50 style="font-size: 20px;">infomation</p>
+                    </div>
+                </div>
+                <!-- 這是每個td內只要產生一個行程就要產生的結構 -->
+                <!-- <div class="modal-body" id="showModalBody">
+                    <div class="form-group d-flex justify-content-around">
+                        <h3 id="showTitle" class="my-2" w-50 style="font-size: 35px; font-weight: 700;">title</h3>
+                        <p id="showInfo" class="my-3" w-50 style="font-size: 20px;">infomation</p>
+                    </div>
+                </div> -->
+                <div class="modal-footer d-flex justify-content-between">
+                    <div class="btnAdd" id="btnAdd">
+                        <button type="button" class="btn d-flex p-0">
+                            <i class="mx-2 fas fa-plus" style="font-size:20px"></i>
+                            ADD MY SCHEDULE
+                        </button>
+                    </div>
+                    <div class="windows">
+                        <button id="btnTodaysClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="btnDele" type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 顯示增加的行程表 modal -->
+    <div class="modal fade" id="addSchedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">ADD MY SCHEDULE</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" id="iconAddClose">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="title-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnAddClose" type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+                    <button id="btnSave" type="button" class="btn btn-primary" data-dismiss="modal">Save Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let list = document.querySelectorAll('td');
+        let showTitle = document.getElementById('showTitle');
+        let showInfo = document.getElementById('showInfo');
+
+        let prevMonth = document.getElementById('prevMonth');
+        let nextMonth = document.getElementById('nextMonth');
+        let calenderYear = document.getElementById('calenderYear');
+        let calenderMonth = document.getElementById('calenderMonth');
+        let titleName;
+        let messageText;
+        let curyear = new Date().getFullYear(); //取得當下的年份
+        let curmonth = new Date().getMonth(); //取得當下的月份
+
+        //月份的名稱,利用其index與curmonth對照找出月份
+        const monthName = ["January", "Febrary", "March", "April", "May", "June", "July", "Auguest", "September",
+            "October", "November", "December"
+        ];
+        calenderMonth.innerText = monthName[curmonth]; //將對照月份填入日曆
+        calenderYear.innerText = curyear; //將年份填入日曆
+
+        let monthDays = new Date(curyear, curmonth + 1, 0).getDate(); //取得當月有幾天
+        let firstDay = new Date(curyear, curmonth, 1).getDay(); //取得當月的第一天是星期幾
+
+        inputTd();
+
+        //箭頭點擊方法
+        prevMonth.addEventListener('click', function () {
+            // debugger
+            prevInputDays();
+            monthDays = new Date(curyear, curmonth + 1, 0).getDate(); //取得當月有幾天
+            firstDay = new Date(curyear, curmonth, 1).getDay(); //取得當月的第一天是星期幾
+            clearInputTd();
+            inputTd();
+        });
+        nextMonth.addEventListener('click', function () {
+            nextInputDays();
+            monthDays = new Date(curyear, curmonth + 1, 0).getDate(); //取得當月有幾天
+            firstDay = new Date(curyear, curmonth, 1).getDay(); //取得當月的第一天是星期幾
+            clearInputTd();
+            inputTd();
+        });
+
+        //prev按鈕 判斷月份與年份的方法
+        function prevInputDays() {
+            console.log('click prev');
+            // debugger
+            curmonth = curmonth - 1;
+            if (curmonth < 0) {
+                curmonth = 11;
+                curyear = curyear - 1;
+            }
+            console.log(curmonth);
+            calenderMonth.innerText = monthName[curmonth]; //將對照月份填入日曆
+            calenderYear.innerText = curyear; //將年份填入日曆
+        }
+        //next按鈕 判斷月份與年份的方法
+        function nextInputDays() {
+            console.log('click next');
+            curmonth = curmonth + 1;
+            // debugger
+            if (curmonth > 11) {
+                curmonth = 0;
+                curyear = curyear + 1
+            }
+            calenderMonth.innerText = monthName[curmonth]; //將對照月份填入日曆
+            calenderYear.innerText = curyear; //將年份填入日曆
+        }
+        //取得當月第一天要放置在哪一個td裡,並加入當月所有日期的方法
+        var getThisDay;
+
+        function inputTd() {
+            for (let i = 0; i < monthDays; i++) {
+                let number = document.createElement('span');
+                number.innerText = 1 + i;
+                let tdToday = list[firstDay + i];
+                // tdToday.setAttribute('style','overflow:scroll');
+                tdToday.appendChild(number);
+
+                //將資料內容取出並顯示在行事曆上
+                if (localStorage.getItem(`${curyear}${curmonth}${i+1}`) != null) {
+                    let appendData = JSON.parse(localStorage.getItem(`${curyear}${curmonth}${i+1}`));
+                    console.log('appendDate:' + appendData);
+                    console.log(`${curyear}${curmonth}${i+1}`);
+                    let div = document.createElement('div');
+                    let ul = document.createElement('ul');
+                    // debugger
+                    appendData.forEach(item => {
+                        console.log('item:' + item);
+                        let li = document.createElement('li');
+                        li.innerText = item.title;
+                        ul.appendChild(li);
+                        li.setAttribute('style',
+                            'background-color:rgba(86, 51, 146, 0.1);margin-bottom: 3px; padding: 5px;');
+                    });
+                    div.appendChild(ul);
+                    div.setAttribute('style', 'padding:10px');
+                    tdToday.appendChild(div);
+                }
+                //點擊這個td的觸發事件
+                list[firstDay + i].addEventListener('click', function () {
+                    $('#todaysSchedule').modal();
+
+                    getThisDay = this.children[0].textContent;
+                    console.log('getThisday:' + getThisDay);
+                    // debugger
+
+                    
+                    let div = document.createElement('div');
+                    let h3 = document.createElement('h3');
+                    let p = document.createElement('p');
+                    let showModalBody = document.getElementById('showModalBody');
+                    // if(h3.innerText == null){
+                    //     console.log('進入remove');
+                    //     // div.remove();
+                    // }
+
+                    if(this.children.length = 1){
+                        h3.innerText = '尚無行程';
+                        // debugger
+                        div.appendChild(h3);
+                        showModalBody.appendChild(div);
+                        if(h3.innerText.length > 4){
+                            h3.innerText.substring()
+                        }
+                    }
+                    // if(getTi.length == null){
+                    //     console.log('is null');
+                    //     h3.innerText = '尚無行程';
+                    //     div.appendChild(h3);
+                    //     showModalBody.appendChild(div);
+                    // }
+                    else{
+                        let getTi = this.children[1].children[0].children;
+                        getTi.forEach( item =>{
+                            h3 = item.innerText;
+                            div.appendChild(h3);
+                        });
+                        p.innerText = messageText;
+                        div.appendChild(p);
+                        showModalBody.appendChild(div);
+                    }
+                })
+                let btnAdd = document.getElementById('btnAdd');
+                btnAdd.addEventListener('click', function () {
+                    $('#addSchedule').modal();
+                    //清除 增加行程表#addSchedule裡的內容  
+                    clearTitleInfo();
+                });
+
+                list[firstDay + i].setAttribute('onmouseover', 'mouseOver(this)');
+                list[firstDay + i].setAttribute('onmouseout', 'mouseOut(this)');
+                // list[firstDay + i].onclick = function () {
+                //     getThisDay = this.children[0].textContent;
+                //     console.log('getThisday:' + getThisDay);
+                // }
+            }
+        }
+        //清空td內的所有日期的方法(之後才可以再新增)
+        function clearInputTd() {
+            for (let i = 0; i < list.length; i++) {
+                list[i].innerText = '';
+                list[i].removeAttribute('data-toggle', 'data-target');
+            }
+        }
+        //mouseOver td事件
+        function mouseOver(item) {
+            item.style.backgroundColor = 'rgba(247,174,110,0.2)';
+        }
+        //mouseOut td事件
+        function mouseOut(item) {
+            item.style.backgroundColor = 'transparent';
+        }
+
+        let modal = document.getElementsByClassName('modal');
+
+        //觸發Save change的 btn的觸發事件
+        let btnSave = document.getElementById('btnSave');
+        btnSave.addEventListener('click', function () {
+            console.log('iiiii');
+            titleName = document.getElementById('title-name').value;
+            messageText = document.getElementById('message-text').value;
+            console.log(titleName);
+            console.log(messageText);
+            //a.將輸入的資料於當天行程表上印出來
+            showTitle.innerText = titleName;
+            showInfo.innerText = messageText;
+
+            //b.將輸入的資料組成物件並存進scheduleArray裡
+            //判斷這個id的scheduleArray是不是空的
+            //如果是空的
+            if (localStorage.getItem(`${curyear}${curmonth}${getThisDay}`) == null) {
+                let scheduleArray = [];
+                //就產生一個scheduleArray陣列並將modal裡輸入的資料存進這個陣列裡
+                scheduleArray.push({
+                    title: titleName,
+                    message: messageText
+                });
+                //將scheduleArray轉成JSON,並存給一個變數(localstorageInner)
+                let localstorageInner = JSON.stringify(scheduleArray);
+                //設定localstorage內容(key,value) //key就是id,當value需要取出時,即可利用id取資料
+                localStorage.setItem(`${curyear}${curmonth}${getThisDay}`, `${localstorageInner}`);
+            }
+            //如果不是空的
+            else{
+                //就把這個id裡面的scheduleArray取出來,存給一個變數appendData
+                let appendData = JSON.parse(localStorage.getItem(`${curyear}${curmonth}${getThisDay}`));
+                //然後把modal裡輸入的資料取出來,再push進去appendData這個陣列裡
+                appendData.push({
+                    title: titleName,
+                    message: messageText
+                });
+                //將appendData轉成JSON,並存給一個變數(localstorageInner)
+                let localstorageInner = JSON.stringify(appendData);
+                //設定localstorage內容(key,value) //key就是id,當value需要取出時,即可利用id取資料
+                localStorage.setItem(`${curyear}${curmonth}${getThisDay}`, `${localstorageInner}`);
+            }
+
+            clearInputTd();
+            inputTd();
+        });
+        
+        
+        //清除 增加行程表#addSchedule裡的內容
+        function clearTitleInfo(){
+            let titleName = document.getElementById('title-name');
+            let messageText = document.getElementById('message-text');
+            titleName.value = '';
+            messageText.value = '';
+        }
+
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
