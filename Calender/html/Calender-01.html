@@ -22,25 +22,26 @@
     <div class="calender">
         <div class="title">
             <h2 id="calenderYear">Year</h2>
+            <input type="text" name="name" style="background-color: lightblue; border: none;">
         </div>
         <div class="body">
             <div class="bodyTitle">
                 <div class="monthlist">
                     <button id="prevMonth"><i class="fas fa-angle-left"></i></button>
-                    <h1 id="calenderMonth">Month</h1>
+                    <h1 id="calenderMonth" class="text-uppercase">Month</h1>
                     <button id="nextMonth"><i class="fas fa-angle-right"></i></button>
                 </div>
             </div>
             <table>
                 <thead class="weekly">
                     <tr>
-                        <th>Sun</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
+                        <th style="padding:5px;">Sun</th>
+                        <th style="padding:5px;">Mon</th>
+                        <th style="padding:5px;">Tue</th>
+                        <th style="padding:5px;">Wed</th>
+                        <th style="padding:5px;">Thu</th>
+                        <th style="padding:5px;">Fri</th>
+                        <th style="padding:5px;">Sat</th>
                     </tr>
                 </thead>
                 <tbody class="days">
@@ -106,28 +107,22 @@
     <!-- 顯示當天的行程表 modal -->
     <div class="modal fade" id="todaysSchedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">MY SCHEDULE</h5>
+        <div class="modal-dialog" role="document" style="width:600px">
+            <div class="modal-content" id="todaysContent">
+                <div class="modal-header" style="background-color: #f7dec9;">
+                    <h5 class="modal-title" id="exampleModalLabel" style=" font-size: 20px;">MY SCHEDULE</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" id="iconTodaysClose">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" id="showModalBody">
-                    <div class="form-group d-flex justify-content-around">
-                        <h3 id="showTitle" class="my-2" w-50 style="font-size: 35px; font-weight: 700;">title</h3>
-                        <p id="showInfo" class="my-3" w-50 style="font-size: 20px;">infomation</p>
-                    </div>
-                </div>
                 <!-- 這是每個td內只要產生一個行程就要產生的結構 -->
-                <!-- <div class="modal-body" id="showModalBody">
-                    <div class="form-group d-flex justify-content-around">
+                <div class="modal-body d" id="showModalBody" style="height: 450px; overflow: scroll;">
+                    <!-- <div class="form-group d-flex justify-content-around">
                         <h3 id="showTitle" class="my-2" w-50 style="font-size: 35px; font-weight: 700;">title</h3>
                         <p id="showInfo" class="my-3" w-50 style="font-size: 20px;">infomation</p>
-                    </div>
-                </div> -->
-                <div class="modal-footer d-flex justify-content-between">
+                    </div> -->
+                </div>
+                <div class="modal-footer justify-content-between">
                     <div class="btnAdd" id="btnAdd">
                         <button type="button" class="btn d-flex p-0">
                             <i class="mx-2 fas fa-plus" style="font-size:20px"></i>
@@ -135,8 +130,7 @@
                         </button>
                     </div>
                     <div class="windows">
-                        <button id="btnTodaysClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button id="btnDele" type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+                        <button id="btnTodaysClose" style="background-color: #e8e3de;" type="button" class="btn border-0" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -147,15 +141,15 @@
     <div class="modal fade" id="addSchedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">ADD MY SCHEDULE</h5>
+            <div class="modal-content" id="addContent">
+                <div class="modal-header" style="background-color:#f7dec9;">
+                    <h5 class="modal-title" id="exampleModalLabel" style=" font-size: 20px;">ADD MY SCHEDULE</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" id="iconAddClose">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
+                    <div class="form-group ">
                         <label for="recipient-name" class="col-form-label">Title:</label>
                         <input type="text" class="form-control" id="title-name">
                     </div>
@@ -163,10 +157,14 @@
                         <label for="message-text" class="col-form-label">Message:</label>
                         <textarea class="form-control" id="message-text"></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="color-choose" class="col-form-label">Color:</label>
+                        <input type="color" name="chooseBackgroundColor" id="color-choose" value="#ece5cd">
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="btnAddClose" type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
-                    <button id="btnSave" type="button" class="btn btn-primary" data-dismiss="modal">Save Change</button>
+                    <button id="btnAddClose" type="button" class="btn border-0 " style="background-color: #e8e3de;" data-dismiss="modal">Close</button>
+                    <button id="btnSave" type="button" class="btn border-0" style="background-color: #f7cca1;" data-dismiss="modal">Save Change</button>
                 </div>
             </div>
         </div>
@@ -183,6 +181,8 @@
         let calenderMonth = document.getElementById('calenderMonth');
         let titleName;
         let messageText;
+        let colorChoose;
+        let liBackgroundColor;
         let curyear = new Date().getFullYear(); //取得當下的年份
         let curmonth = new Date().getMonth(); //取得當下的月份
 
@@ -242,31 +242,63 @@
         }
         //取得當月第一天要放置在哪一個td裡,並加入當月所有日期的方法
         var getThisDay;
+        var getThisTd;
 
         function inputTd() {
+            var eachTime = 0;
             for (let i = 0; i < monthDays; i++) {
                 let number = document.createElement('span');
                 number.innerText = 1 + i;
                 let tdToday = list[firstDay + i];
-                // tdToday.setAttribute('style','overflow:scroll');
                 tdToday.appendChild(number);
-
+                number.setAttribute('style','line-height: 30px; padding: 5px;');
+                
                 //將資料內容取出並顯示在行事曆上
                 if (localStorage.getItem(`${curyear}${curmonth}${i+1}`) != null) {
                     let appendData = JSON.parse(localStorage.getItem(`${curyear}${curmonth}${i+1}`));
-                    console.log('appendDate:' + appendData);
-                    console.log(`${curyear}${curmonth}${i+1}`);
                     let div = document.createElement('div');
                     let ul = document.createElement('ul');
                     // debugger
-                    appendData.forEach(item => {
-                        console.log('item:' + item);
+
+                    if(appendData.length == 1){
                         let li = document.createElement('li');
-                        li.innerText = item.title;
-                        ul.appendChild(li);
-                        li.setAttribute('style',
-                            'background-color:rgba(86, 51, 146, 0.1);margin-bottom: 3px; padding: 5px;');
-                    });
+                            li.innerText = appendData[0].title;
+                            liBackgroundColor = appendData[0].color; 
+                            ul.appendChild(li);
+                            li.setAttribute('style','margin-bottom: 3px; padding: 5px; background-color:'+liBackgroundColor);
+                    }
+                    if(appendData.length > 1 || appendData.length <= 2){
+                            let titleInput;
+                            if(appendData.length == 2 ){
+                                appendData.forEach(item =>{
+                                    let li2 = document.createElement('li');
+                                    // debugger
+                                    li2.innerText = item.title;
+                                    let li2BackgroundColor = item.color; 
+                                    ul.appendChild(li2);
+                                    li2.setAttribute('style','margin-bottom: 3px; padding: 5px; background-color:'+li2BackgroundColor);
+                                });
+                            }
+                            // debugger
+                            if(appendData.length >= 3  ){
+                                let li3 = document.createElement('li');
+                                
+                                for(let k=0 ; k<2 ; k++){
+                                    let li3 = document.createElement('li');
+                                    li3.innerText = appendData[k].title;
+                                    let li3BackgroundColor = appendData[k].color; 
+                                    li3.setAttribute('style','margin-bottom: 3px; padding: 5px; background-color:'+li3BackgroundColor);
+                                    ul.appendChild(li3);
+                                }
+                            }
+                    }
+                    if(appendData.length >= 3 ){
+                        let li3 = document.createElement('li');
+                        li3.innerText = 'more...';
+                        ul.appendChild(li3);
+                        li3.setAttribute('style','font-weight: 300; color: #352d26; padding-top: 10px; text-align: end;');
+                        li3.setAttribute('id','li3');
+                    }
                     div.appendChild(ul);
                     div.setAttribute('style', 'padding:10px');
                     tdToday.appendChild(div);
@@ -276,58 +308,121 @@
                     $('#todaysSchedule').modal();
 
                     getThisDay = this.children[0].textContent;
-                    console.log('getThisday:' + getThisDay);
-                    // debugger
-
-                    
-                    let div = document.createElement('div');
-                    let h3 = document.createElement('h3');
-                    let p = document.createElement('p');
+                    getThisTd = this.children[1];
                     let showModalBody = document.getElementById('showModalBody');
-                    // if(h3.innerText == null){
-                    //     console.log('進入remove');
-                    //     // div.remove();
-                    // }
+                    showModalBody.innerHTML = '';
+                    //判斷這個td的id在localStorage裡有沒有內容
+                    //如果有內容的話
+                    if (localStorage.getItem(`${curyear}${curmonth}${getThisDay}`) != null) {
+                        //就把這個id裡面的scheduleArray取出來,存給一個變數appendData
+                        let tdUlData = JSON.parse(localStorage.getItem(`${curyear}${curmonth}${getThisDay}`));
 
-                    if(this.children.length = 1){
-                        h3.innerText = '尚無行程';
-                        // debugger
-                        div.appendChild(h3);
-                        showModalBody.appendChild(div);
-                        if(h3.innerText.length > 4){
-                            h3.innerText.substring()
-                        }
-                    }
-                    // if(getTi.length == null){
-                    //     console.log('is null');
-                    //     h3.innerText = '尚無行程';
-                    //     div.appendChild(h3);
-                    //     showModalBody.appendChild(div);
-                    // }
-                    else{
-                        let getTi = this.children[1].children[0].children;
-                        getTi.forEach( item =>{
-                            h3 = item.innerText;
+                        //a.將輸入的資料於當天行程表上印出來
+                        tdUlData.forEach((item, index) => {
+                            let div = document.createElement('div');
+                            let h3 = document.createElement('h3');
+                            let p = document.createElement('p');
+                            let btnDele = document.createElement('button');
+                            h3.innerText = item.title;
+                            p.innerText = item.message;
+                            btnDele.innerText = 'Delete';
                             div.appendChild(h3);
+                            div.appendChild(p);
+                            div.appendChild(btnDele);
+                            showModalBody.appendChild(div);
+
+                            div.classList.add('form-group','divRemove','d-flex','justify-content-between');
+                            div.setAttribute('style','word-break: break-all; background-color:'+item.color);
+                            h3.setAttribute('id','showTitle');
+                            h3.setAttribute('style','font-size: 35px; font-weight: 700; margin: 0 10px 0 10px;');
+                            h3.classList.add('my-2','w-50');
+                            p.setAttribute('id','showInfo');
+                            p.setAttribute('style','font-size: 20px; margin: 0 10px 0 10px;');
+                            p.classList.add('my-3','w-50');
+                            btnDele.classList.add('btn','btn-primary','btnDele','rounded-pill','shadow');
+                            btnDele.setAttribute('type','button');
+                            btnDele.setAttribute('style','padding:8px; background-color: #f9ecde; border: none; color: #292828; height: 40px; width: 80px; margin: 6px;');
+
+                            //當btnDele被點擊到的時候, 取得其index
+                            btnDele.addEventListener('click',function(){
+                                tdUlData.splice(index,1);
+                                //將scheduleArray轉成JSON,並存給一個變數(localstorageInner)
+                                let localstorageUpdate = JSON.stringify(tdUlData);
+                                //設定localstorage內容(key,value) //key就是id,當value需要取出時,即可利用id取資料
+                                localStorage.setItem(`${curyear}${curmonth}${getThisDay}`, `${localstorageUpdate}`);
+                                if (localStorage.getItem(`${curyear}${curmonth}${getThisDay}`) != null) {
+                                    let appendData = JSON.parse(localStorage.getItem(`${curyear}${curmonth}${getThisDay}`));
+                                    getThisTd.remove();                                    
+                                    let div = document.createElement('div');
+                                    let ul = document.createElement('ul');
+                                    // debugger
+
+                                    if(appendData.length == 1){
+                                        let li = document.createElement('li');
+                                            li.innerText = appendData[0].title;
+                                            liBackgroundColor = appendData[0].color; 
+                                            ul.appendChild(li);
+                                            li.setAttribute('style','margin-bottom: 3px; padding: 5px; background-color:'+liBackgroundColor);
+                                    }
+                                    if(appendData.length > 1 || appendData.length <= 2){
+                                            let titleInput;
+                                            if(appendData.length == 2 ){
+                                                appendData.forEach(item =>{
+                                                    let li2 = document.createElement('li');
+                                                    // debugger
+                                                    li2.innerText = item.title;
+                                                    let li2BackgroundColor = item.color; 
+                                                    ul.appendChild(li2);
+                                                    li2.setAttribute('style','margin-bottom: 3px; padding: 5px; background-color:'+li2BackgroundColor);
+                                                });
+                                            }
+                                            // debugger
+                                            if(appendData.length >= 3  ){
+                                                let li3 = document.createElement('li');
+                                                
+                                                for(let k=0 ; k<2 ; k++){
+                                                    let li3 = document.createElement('li');
+                                                    li3.innerText = appendData[k].title;
+                                                    let li3BackgroundColor = appendData[k].color; 
+                                                    li3.setAttribute('style','margin-bottom: 3px; padding: 5px; background-color:'+li3BackgroundColor);
+                                                    ul.appendChild(li3);
+                                                }
+                                            }
+                                    }
+                                    if(appendData.length >= 3 ){
+                                        let li3 = document.createElement('li');
+                                        li3.innerText = 'more...';
+                                        ul.appendChild(li3);
+                                        li3.setAttribute('style','font-weight: 300; color: #352d26; padding-top: 10px; text-align: end;');
+                                        li3.setAttribute('id','li3');
+                                    }
+                                    div.appendChild(ul);
+                                    div.setAttribute('style', 'padding:10px');
+                                    tdToday.appendChild(div);
+                                }
+                                //讓modal關掉
+                                $('#todaysSchedule').modal('hide');
+                            })
                         });
-                        p.innerText = messageText;
-                        div.appendChild(p);
-                        showModalBody.appendChild(div);
                     }
                 })
+                let todaysContent = document.getElementById('todaysContent');
+                let btnTodaysClose = document.getElementById('btnTodaysClose');
+                let btnDele = document.querySelectorAll('.btnDele')[0];
                 let btnAdd = document.getElementById('btnAdd');
                 btnAdd.addEventListener('click', function () {
                     $('#addSchedule').modal();
                     //清除 增加行程表#addSchedule裡的內容  
                     clearTitleInfo();
+                    //彈出新增行事曆modal時,顯示今天行事曆的modal要先關掉
+                    $('#todaysSchedule').modal('hide');
+
                 });
+                let iconAddClose = document.getElementById('iconAddClose');
+                let btnAddClose = document.getElementById('btnAddClose');
 
                 list[firstDay + i].setAttribute('onmouseover', 'mouseOver(this)');
                 list[firstDay + i].setAttribute('onmouseout', 'mouseOut(this)');
-                // list[firstDay + i].onclick = function () {
-                //     getThisDay = this.children[0].textContent;
-                //     console.log('getThisday:' + getThisDay);
-                // }
             }
         }
         //清空td內的所有日期的方法(之後才可以再新增)
@@ -347,18 +442,44 @@
         }
 
         let modal = document.getElementsByClassName('modal');
+        let addSchedule = document.getElementById('addSchedule');
 
         //觸發Save change的 btn的觸發事件
         let btnSave = document.getElementById('btnSave');
         btnSave.addEventListener('click', function () {
-            console.log('iiiii');
             titleName = document.getElementById('title-name').value;
             messageText = document.getElementById('message-text').value;
-            console.log(titleName);
-            console.log(messageText);
+            colorChoose = document.getElementById('color-choose').value;
+            console.log(colorChoose);
+
             //a.將輸入的資料於當天行程表上印出來
-            showTitle.innerText = titleName;
-            showInfo.innerText = messageText;
+            let showModalBody = document.getElementById('showModalBody');
+            let div = document.createElement('div');
+            let h3 = document.createElement('h3');
+            let p = document.createElement('p');
+            let btnDele = document.createElement('button');
+            // let colorSelector = document.getElementById('color-choose');
+
+            h3.innerText = titleName;
+            p.innerText = messageText;
+            btnDele.innerText = 'Delete';
+
+            div.appendChild(h3);
+            div.appendChild(p);
+            div.appendChild(btnDele);
+            showModalBody.appendChild(div);
+
+            div.classList.add('form-group','divRemove','d-flex','justify-content-between');
+            div.setAttribute('style','border-bottom: 1px solid gainsboro; word-break: break-all;background-color:'+colorChoose);
+            h3.setAttribute('id','showTitle');
+            h3.setAttribute('style','font-size: 35px; font-weight: 700; margin: 0 10px 0 10px;');
+            h3.classList.add('my-2','w-50');
+            p.setAttribute('id','showInfo');
+            p.setAttribute('style','font-size: 20px; margin: 0 10px 0 10px;');
+            p.classList.add('my-3','w-50');
+            btnDele.classList.add('btn','btn-primary','btnDele','rounded-pill','shadow-sm');
+            btnDele.setAttribute('type','button');
+            btnDele.setAttribute('style','padding:8px; background-color: #f9ecde; border: none; color: #292828; height: 40px; width: 80px; margin: 6px;');
 
             //b.將輸入的資料組成物件並存進scheduleArray裡
             //判斷這個id的scheduleArray是不是空的
@@ -368,7 +489,8 @@
                 //就產生一個scheduleArray陣列並將modal裡輸入的資料存進這個陣列裡
                 scheduleArray.push({
                     title: titleName,
-                    message: messageText
+                    message: messageText,
+                    color: colorChoose
                 });
                 //將scheduleArray轉成JSON,並存給一個變數(localstorageInner)
                 let localstorageInner = JSON.stringify(scheduleArray);
@@ -382,7 +504,8 @@
                 //然後把modal裡輸入的資料取出來,再push進去appendData這個陣列裡
                 appendData.push({
                     title: titleName,
-                    message: messageText
+                    message: messageText,
+                    color: colorChoose
                 });
                 //將appendData轉成JSON,並存給一個變數(localstorageInner)
                 let localstorageInner = JSON.stringify(appendData);
@@ -394,7 +517,6 @@
             inputTd();
         });
         
-        
         //清除 增加行程表#addSchedule裡的內容
         function clearTitleInfo(){
             let titleName = document.getElementById('title-name');
@@ -402,7 +524,6 @@
             titleName.value = '';
             messageText.value = '';
         }
-
 
     </script>
 

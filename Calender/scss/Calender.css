@@ -1,5 +1,5 @@
 .calender {
-  width: 960px;
+  width: 1200px;
   border: 1px solid gainsboro;
   margin: auto;
   display: -webkit-box;
@@ -32,10 +32,15 @@
   color: #2e2d2d;
 }
 
+.calender .title input:-internal-autofill-selected {
+  background-color: red;
+}
+
 .calender .body {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  padding: 20px;
 }
 
 .calender .body .bodyTitle .monthlist {
@@ -62,9 +67,9 @@
 }
 
 .calender .body table {
-  width: 95%;
+  width: 100%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
@@ -74,16 +79,32 @@
       -ms-flex: 1;
           flex: 1;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
   color: #9c9999;
 }
 
 .calender .body table thead tr th:hover {
-  color: red;
+  color: #686363;
+  font-weight: bolder;
 }
 
 .calender .body table tbody tr td {
   border: 1px solid gainsboro;
-  height: 100px;
+  height: 130px;
   width: 14.2857142857%;
+}
+
+.calender .body table tbody tr td ul {
+  width: 110px;
+  text-overflow: ellipsis;
+}
+
+.calender .body table tbody tr td ul li {
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 /*# sourceMappingURL=Calender.css.map */

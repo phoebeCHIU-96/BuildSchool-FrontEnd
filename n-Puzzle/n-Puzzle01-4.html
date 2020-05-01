@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        canvas{
+            position:absolute;
+            border: 1px solid gray;
+        }
+    </style>
+    </head>
+    <body>
+    
+        <div class="container m-auto" >
+                <div class="row">
+                    <div class="col-6 flex-1">
+                        <div class="puzzle p-0 position-relative" id="puzzle"></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="btnAll">
+                            <button id="btnStart" onclick="random()">Start</button>
+                            <select name="" id="changePic" onchange="change()"><option selected value="3">3X3</option><option value="4">4X4</option></select>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    <script>
+        let image = new Image();
+        let imageWhite = new Image();
+        image.src='./view.png';
+        imageWhite.src='./white.png';
+        let mulpitly = document.getElementById('changePic').value;
+        let answerArray=[];
+        
+        let div = document.getElementsByClassName('puzzle')[0];
+        function createPuzzle (){
+            answerArray=[];
+            let height = image.height / mulpitly;
+            let width = image.width / mulpitly;
+            for (let i = 0; i < mulpitly; i++) {
+                
+                for (let j = 0; j < mulpitly; j++) {
+                    
+                    let canvas = document.createElement('canvas');
+                    canvas.height = height;
+                    canvas.width = width;
+                    let canvascontext=canvas.getContext('2d');
+                    if(i==0 && j==0){
+                        canvascontext.drawImage(imageWhite,j*width,i*height,width,height,0,0,width,height);
+                        canvas.classList.add('white');
+                        canvas.setAttribute('style','top:0px ; left:0px');
+                        answerArray.push({top:0, left:0});
+                    }
+                    else{
+                        canvascontext.drawImage(image,j*width,i*height,width,height,0,0,width,height);
+                        canvas.classList.add('color');
+                        canvas.setAttribute('style',`top:${i*height}px; left:${j*width}px;`);
+                        answerArray.push({top: i*height , left: j*width});
+                        canvas.addEventListener('click',function(){
+                            let white = document.getElementsByClassName('white')[0];
+                            // debugger
+                            if ((this.offsetTop == white.offsetTop) && ((this.offsetLeft + width) == white.offsetLeft || (this.offsetLeft - width) == white.offsetLeft)){
+                                let thisTop=this.offsetTop;
+                                let thisLeft=this.offsetLeft;
+                                this.setAttribute('style',`top:${white.offsetTop}px; left:${white.offsetLeft}px;`);
+                                white.setAttribute('style','top:'+thisTop+'px ; left:'+thisLeft+'px;');
+                            }
+                            else if((this.offsetLeft == white.offsetLeft) && ((this.offsetTop + width) == white.offsetTop || (this.offsetTop - width) == white.offsetTop)){
+                                let thisTop=this.offsetTop;
+                                let thisLeft=this.offsetLeft;
+                                this.setAttribute('style',`top:${white.offsetTop}px; left:${white.offsetLeft}px;`);
+                                white.setAttribute('style','top:'+thisTop+'px ; left:'+thisLeft+'px;');
+                            }
+
+                            let check = 0;
+                            let pic = document.querySelectorAll('.puzzle canvas');
+                            for (let m = 0; m < pic.length; m++) {
+                                if(answerArray[m].top == pic[m].offsetTop && answerArray[m].left == pic[m].offsetLeft ){
+                                    check = check +1;
+                                }
+                            }
+                            if (check == pic.length) {
+                                var s = setTimeout("alert('Victory')",300);
+                            }
+                        })
+                    }
+                    div.appendChild(canvas);
+                }
+            }
+        }
+        image.onload = function(){
+            createPuzzle ();
+        };
+
+        function random(){
+            console.log('hereeeee');
+            let times = 300;
+            while(times > 0){
+                let color = document.getElementsByClassName('color');
+                let white = document.getElementsByClassName('white')[0];
+                let random = Math.floor( Math.random()*(color.length-1));
+                let height = image.height / mulpitly;
+                let width = image.width / mulpitly;
+
+                if ((color[random].offsetTop == white.offsetTop) && ((color[random].offsetLeft + width) == white.offsetLeft || (color[random].offsetLeft - width) == white.offsetLeft)){
+                    let thisTop=color[random].offsetTop;
+                    let thisLeft=color[random].offsetLeft;
+                    color[random].setAttribute('style',`top:${white.offsetTop}px; left:${white.offsetLeft}px;`);
+                    white.setAttribute('style','top:'+thisTop+'px ; left:'+thisLeft+'px;');
+                    times = times-1;
+                }
+                else if((color[random].offsetLeft == white.offsetLeft) && ((color[random].offsetTop + width) == white.offsetTop || (color[random].offsetTop - width) == white.offsetTop)){
+                    let thisTop=color[random].offsetTop;
+                    let thisLeft=color[random].offsetLeft;
+                    color[random].setAttribute('style',`top:${white.offsetTop}px; left:${white.offsetLeft}px;`);
+                    white.setAttribute('style','top:'+thisTop+'px ; left:'+thisLeft+'px;');
+                    times = times-1;
+                }
+            }
+        }
+
+        function change(){
+            mulpitly = document.getElementById('changePic').value;
+            div.innerHTML = '';
+            createPuzzle ();
+        }
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>

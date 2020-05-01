@@ -1,5 +1,5 @@
 .calender {
-    width: 960px;
+    width: 1200px;
     border: 1px solid gainsboro;
     margin: auto;
     display: flex;
@@ -17,10 +17,17 @@
             font-weight: 700;
             color: rgb(46, 45, 45);
         }
+        input{
+
+        }
+        input:-internal-autofill-selected{
+            background-color: red;
+        }
     }
 
     .body {
-        flex: 3;
+        flex: 4;
+        padding: 20px;
 
         .bodyTitle {
             .monthlist {
@@ -41,9 +48,9 @@
             }
         }
         table {
-            width: 95%;
+            width: 100%;
             margin: auto;
-            margin-top: 20px;
+            margin-top: 30px;
             margin-bottom: 20px;
             // border: 1px solid gainsboro;
             thead {
@@ -52,10 +59,13 @@
                         width: 14.2857142857%;
                         flex: 1;
                         text-align: center;
+                        text-transform: uppercase;
+                        font-weight: 400;
                         color: rgb(156, 153, 153);
                     }
                     th:hover{
-                        color: red;
+                        color: rgb(104, 99, 99);
+                        font-weight: bolder;
                     }
                 }
             }
@@ -63,9 +73,19 @@
                 tr {
                     td {
                         border: 1px solid gainsboro;
-                        height: 100px;
-                        
+                        height: 130px;
                         width: 14.2857142857%;
+                        ul{
+                            width: 110px;
+                            text-overflow: ellipsis;
+                            li{
+                                overflow:hidden;
+                                white-space: nowrap;
+                                overflow:hidden; 
+                                white-space: nowrap; 
+                                text-overflow: ellipsis;
+                            }
+                        }
                     }
                     
                 }
